@@ -1,0 +1,27 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name IDCaptureLite
+import AudioToolbox
+import CoreGraphics
+import Foundation
+import IDentityLiteSDK
+import Swift
+import UIKit
+import _Concurrency
+public struct ValidateIdResult {
+  public var front: IDentityLiteSDK.DetectedData
+  public var back: IDentityLiteSDK.DetectedData?
+  public func submit(completion: @escaping IDentityLiteSDK.ValidateIdAPICompletion)
+}
+public typealias ValidateIdCompletion = (_ result: Swift.Result<IDCaptureLite.ValidateIdResult, Swift.Error>) -> Swift.Void
+extension IDentityLiteSDK.IDentitySDK {
+  public static var customerValidateIdRequest: IDentityLiteSDK.CustomerValidateIdRequest?
+  public class func idValidation(from presenter: UIKit.UIViewController, options: IDentityLiteSDK.AdditionalCustomerWFlagCommonData, captureBack: Swift.Bool = true, completion: @escaping IDCaptureLite.ValidateIdCompletion)
+  public class func idValidation(from presenter: UIKit.UIViewController, options: IDentityLiteSDK.AdditionalCustomerWFlagCommonData, idType: Swift.String, idCountry: Swift.String, idState: Swift.String?, completion: @escaping IDCaptureLite.ValidateIdCompletion)
+}
+extension IDentityLiteSDK.State : Swift.Equatable {
+  public static func == (lhs: IDentityLiteSDK.State, rhs: IDentityLiteSDK.State) -> Swift.Bool
+}
+extension IDentityLiteSDK.Country : Swift.Equatable {
+  public static func == (lhs: IDentityLiteSDK.Country, rhs: IDentityLiteSDK.Country) -> Swift.Bool
+}
