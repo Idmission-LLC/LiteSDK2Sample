@@ -152,7 +152,7 @@ end
 
 5) Run `pod install` to install the dependencies.  
 
-6) As per requirement download the framework zip file which is mentioned in [SDK Flavours Download Links](#SDK-Flavours-Download-Links) section. On downloading the zip file, unzip it & you will be able to see respective frameworks files in unzipped folder.  
+6) As per requirement download the framework zip file which is mentioned in [SDK Flavours Download Links](#sdk-flavours-download-links) section. On downloading the zip file, unzip it & you will be able to see respective frameworks files in unzipped folder.  
 
 - **IDentitySDK** : To integrate IDentitySDK drag & drop following files in your project.
     - `IDentitySDK_Swift.framework`
