@@ -23,7 +23,7 @@ The IDmission IDentity SDK is a comprehensive toolkit that enables the use of an
 
 <br />
 
-**SDK Flavours Download Links -** As per your requirement you can  downloads the below `IDentitySDK` / `IDentityMediumSDK` / `IDentityLiteSDK`.
+**SDK Flavours Download Links** - As per your requirement you can  downloads the below `IDentitySDK` / `IDentityMediumSDK` / `IDentityLiteSDK`.
 - [Download IDentitySDK](https://drive.google.com/file/d/1pnIMJT8TeCoiQJjkwmztoUroVM8cHPUn/view?usp=sharing)
 - [Download IDentityMediumSDK](https://drive.google.com/file/d/1iBY2AKyIWTsVLv2-Q1TaZ1LsjvTT0Wh5/view?usp=sharing)
 - [Download IDentityLiteSDK](https://drive.google.com/file/d/1ns5Vjr7jSLs30s2lXXwdruNpM8xpegIU/view?usp=sharing)
