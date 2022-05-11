@@ -49,7 +49,7 @@ The IDmission IDentity SDK is a comprehensive toolkit that enables the use of an
 <br />
 
 **SDK Documentation -** Here is the link to the Identity Proofing SDK Documentation.
-- [SDK Documentation](http://54.254.213.10:4567/iOS-IDentity-SDK/Classes/IDentitySDK.html) 
+- [SDK Documentation](/iOS-SDK-2/Classes/IDentitySDK.html) 
   
 <br />
 
@@ -72,7 +72,7 @@ The IDmission IDentity SDK is a comprehensive toolkit that enables the use of an
 
   
 
-Additional functions are also detailed in the [SDK Documentation](http://54.254.213.10:4567/iOS-IDentity-SDK/Classes/IDentitySDK.html)
+Additional functions are also detailed in the [SDK Documentation](/iOS-SDK-2/Classes/IDentitySDK.html/Classes/IDentitySDK.html)
 
   
 
