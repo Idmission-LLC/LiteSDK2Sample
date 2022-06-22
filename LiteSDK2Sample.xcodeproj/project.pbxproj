@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		0C5F3F2F281EAF86002DAA88 /* ResultScreenFor50.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C5F3F2D281EAF86002DAA88 /* ResultScreenFor50.xib */; };
 		0C5F3F30281EAF86002DAA88 /* ResultScreenFor50.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F3F2E281EAF86002DAA88 /* ResultScreenFor50.swift */; };
-		0C5F3F31281EB297002DAA88 /* IDCaptureLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5F3F28281EAE88002DAA88 /* IDCaptureLite.framework */; };
-		0C5F3F32281EB297002DAA88 /* IDCaptureLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5F3F28281EAE88002DAA88 /* IDCaptureLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0C5F3F33281EB299002DAA88 /* IDentityLiteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5F3F29281EAE88002DAA88 /* IDentityLiteSDK.framework */; };
-		0C5F3F34281EB299002DAA88 /* IDentityLiteSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5F3F29281EAE88002DAA88 /* IDentityLiteSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0C5F3F35281EB29B002DAA88 /* SelfieCaptureLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5F3F27281EAE88002DAA88 /* SelfieCaptureLite.framework */; };
-		0C5F3F36281EB29B002DAA88 /* SelfieCaptureLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5F3F27281EAE88002DAA88 /* SelfieCaptureLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0C78A63428630C580072CA4D /* IDCaptureLite.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C78A62F28630C4D0072CA4D /* IDCaptureLite.xcframework */; };
+		0C78A63528630C580072CA4D /* IDCaptureLite.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C78A62F28630C4D0072CA4D /* IDCaptureLite.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0C78A63628630C5A0072CA4D /* IDentityLiteSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C78A63028630C4F0072CA4D /* IDentityLiteSDK.xcframework */; };
+		0C78A63728630C5A0072CA4D /* IDentityLiteSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C78A63028630C4F0072CA4D /* IDentityLiteSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0C78A63828630C5C0072CA4D /* SelfieCaptureLite.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C78A62E28630C4D0072CA4D /* SelfieCaptureLite.xcframework */; };
+		0C78A63928630C5C0072CA4D /* SelfieCaptureLite.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C78A62E28630C4D0072CA4D /* SelfieCaptureLite.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0CA76AC3281C236800B23630 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA76AC2281C236800B23630 /* AppDelegate.swift */; };
 		0CA76AC5281C236800B23630 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA76AC4281C236800B23630 /* SceneDelegate.swift */; };
 		0CA76AC7281C236800B23630 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA76AC6281C236800B23630 /* ViewController.swift */; };
@@ -35,9 +35,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0C5F3F32281EB297002DAA88 /* IDCaptureLite.framework in Embed Frameworks */,
-				0C5F3F36281EB29B002DAA88 /* SelfieCaptureLite.framework in Embed Frameworks */,
-				0C5F3F34281EB299002DAA88 /* IDentityLiteSDK.framework in Embed Frameworks */,
+				0C78A63728630C5A0072CA4D /* IDentityLiteSDK.xcframework in Embed Frameworks */,
+				0C78A63928630C5C0072CA4D /* SelfieCaptureLite.xcframework in Embed Frameworks */,
+				0C78A63528630C580072CA4D /* IDCaptureLite.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,11 +45,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0C5F3F27281EAE88002DAA88 /* SelfieCaptureLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SelfieCaptureLite.framework; sourceTree = "<group>"; };
-		0C5F3F28281EAE88002DAA88 /* IDCaptureLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IDCaptureLite.framework; sourceTree = "<group>"; };
-		0C5F3F29281EAE88002DAA88 /* IDentityLiteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IDentityLiteSDK.framework; sourceTree = "<group>"; };
 		0C5F3F2D281EAF86002DAA88 /* ResultScreenFor50.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultScreenFor50.xib; sourceTree = "<group>"; };
 		0C5F3F2E281EAF86002DAA88 /* ResultScreenFor50.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultScreenFor50.swift; sourceTree = "<group>"; };
+		0C78A62E28630C4D0072CA4D /* SelfieCaptureLite.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SelfieCaptureLite.xcframework; sourceTree = "<group>"; };
+		0C78A62F28630C4D0072CA4D /* IDCaptureLite.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = IDCaptureLite.xcframework; sourceTree = "<group>"; };
+		0C78A63028630C4F0072CA4D /* IDentityLiteSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = IDentityLiteSDK.xcframework; sourceTree = "<group>"; };
 		0CA76ABF281C236800B23630 /* LiteSDK2Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiteSDK2Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CA76AC2281C236800B23630 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CA76AC4281C236800B23630 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,10 +72,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C5F3F31281EB297002DAA88 /* IDCaptureLite.framework in Frameworks */,
-				0C5F3F35281EB29B002DAA88 /* SelfieCaptureLite.framework in Frameworks */,
+				0C78A63628630C5A0072CA4D /* IDentityLiteSDK.xcframework in Frameworks */,
 				D9E96422E78A08CB42709C24 /* Pods_LiteSDK2Sample.framework in Frameworks */,
-				0C5F3F33281EB299002DAA88 /* IDentityLiteSDK.framework in Frameworks */,
+				0C78A63828630C5C0072CA4D /* SelfieCaptureLite.xcframework in Frameworks */,
+				0C78A63428630C580072CA4D /* IDCaptureLite.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,9 +140,9 @@
 		B54ED9D12CB7B7E1BC952DF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0C5F3F28281EAE88002DAA88 /* IDCaptureLite.framework */,
-				0C5F3F29281EAE88002DAA88 /* IDentityLiteSDK.framework */,
-				0C5F3F27281EAE88002DAA88 /* SelfieCaptureLite.framework */,
+				0C78A62F28630C4D0072CA4D /* IDCaptureLite.xcframework */,
+				0C78A63028630C4F0072CA4D /* IDentityLiteSDK.xcframework */,
+				0C78A62E28630C4D0072CA4D /* SelfieCaptureLite.xcframework */,
 				EE07861FD8912A5CB7F22387 /* Pods_LiteSDK2Sample.framework */,
 			);
 			name = Frameworks;
