@@ -35,7 +35,7 @@ public struct CustomerEnrollResult {
   public var selfie: IDentityLiteSDK.Selfie
   public var front: IDentityLiteSDK.DetectedData
   public var back: IDentityLiteSDK.DetectedData?
-  public func submit(completion: @escaping IDentityLiteSDK.ValidateIdCustomerEnrollAPICompletion)
+  public func submit(cardToken: Swift.String? = nil, cardLast4: Swift.String? = nil, completion: @escaping IDentityLiteSDK.ValidateIdCustomerEnrollAPICompletion)
 }
 public typealias LiveFaceCheckCompletion = (_ result: Swift.Result<SelfieCaptureLite.LiveFaceCheckResult, Swift.Error>) -> Swift.Void
 public typealias CustomerEnrollBiometricsCompletion = (_ result: Swift.Result<SelfieCaptureLite.CustomerEnrollBiometricsResult, Swift.Error>) -> Swift.Void

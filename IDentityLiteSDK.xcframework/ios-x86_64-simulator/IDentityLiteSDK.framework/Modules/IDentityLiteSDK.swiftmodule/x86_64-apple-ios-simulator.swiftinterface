@@ -244,7 +244,9 @@ public struct PersonalCustomerCommonRequestData : Swift.Encodable {
   public var city: Swift.String?
   public var district: Swift.String?
   public var country: Swift.String?
-  public init(uniqueNumber: Swift.String, name: Swift.String? = nil, phone: Swift.String? = nil, email: Swift.String? = nil, dob: Swift.String? = nil, gender: IDentityLiteSDK.PersonalCustomerCommonRequestData.Gender? = nil, addressLine1: Swift.String? = nil, addressLine2: Swift.String? = nil, city: Swift.String? = nil, district: Swift.String? = nil, country: Swift.String? = nil)
+  public var cardToken: Swift.String?
+  public var cardLast4: Swift.String?
+  public init(uniqueNumber: Swift.String, name: Swift.String? = nil, phone: Swift.String? = nil, email: Swift.String? = nil, dob: Swift.String? = nil, gender: IDentityLiteSDK.PersonalCustomerCommonRequestData.Gender? = nil, addressLine1: Swift.String? = nil, addressLine2: Swift.String? = nil, city: Swift.String? = nil, district: Swift.String? = nil, country: Swift.String? = nil, cardToken: Swift.String? = nil, cardLast4: Swift.String? = nil)
   public func encode(to encoder: Swift.Encoder) throws
 }
 public struct CustomerValidateIdDataRequest : Swift.Encodable {

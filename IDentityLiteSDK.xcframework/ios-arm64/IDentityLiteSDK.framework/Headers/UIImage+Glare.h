@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (Glare)
 
++ (UIImage *)getBWImage:(UIImage *)originalImage;
 + (BOOL)isLightCorrect:(UIImage*)uiimage;
 
 @end
