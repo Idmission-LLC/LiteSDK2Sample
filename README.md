@@ -1,5 +1,3 @@
-
-
 #  IDentity SDK
   
 <br />
@@ -69,7 +67,7 @@ The IDmission IDentity SDK is a comprehensive toolkit that enables the use of an
 - [Enroll Customer with ID validation](#5-enroll-customer-with-id-validation)
 - [Customer Verification](#6-customer-verification)
 - [Customer Biometric Verification](#7-customer-biometric-verification)
-
+- [Autofill](#8-autofill)  
   
 
 Additional functions are also detailed in the [SDK Documentation](http://54.254.213.10:4567/iOS-IDentity-SDK/Classes/IDentitySDK.html)
@@ -152,22 +150,22 @@ end
 
 5) Run `pod install` to install the dependencies.  
 
-6) As per requirement download the framework zip file which is mentioned in [SDK Flavours Download Links](#SDK-Flavours-Download-Links) section. On downloading the zip file, unzip it & you will be able to see respective frameworks files in unzipped folder.  
+6) As per requirement download the framework zip file which is mentioned in [SDK Flavours Download Links](#SDK-Flavours-Download-Links) section. On downloading the zip file, unzip it & you will be able to see respective xcframeworks files in unzipped folder.  
 
 - **IDentitySDK** : To integrate IDentitySDK drag & drop following files in your project.
-    - `IDentitySDK_Swift.framework`
-    - `IDCapture_Swift.framework`
-    - `SelfieCapture_Swift.framework`
+    - `IDentitySDK_Swift.xcframework`
+    - `IDCapture_Swift.xcframework`
+    - `SelfieCapture_Swift.xcframework`
     
 - **IDentityMediumSDK** : To integrate IDentityMediumSDK drag & drop following files in your project.
-    - `IDentityMediumSDK.framework`
-    - `IDCaptureMedium.framework`
-    - `SelfieCaptureMedium.framework`
+    - `IDentityMediumSDK.xcframework`
+    - `IDCaptureMedium.xcframework`
+    - `SelfieCaptureMedium.xcframework`
 
 - **IDentityLiteSDK** : To integrate IDentityLiteSDK drag & drop following files in your project.
-    - `IDentityLiteSDK.framework`
-    - `IDCaptureLite.framework`
-    - `SelfieCaptureLite.framework`
+    - `IDentityLiteSDK.xcframework`
+    - `IDCaptureLite.xcframework`
+    - `SelfieCaptureLite.xcframework`
 
 7) Once added respective frameworks in your project, make sure to make it all as a `Embed & Sign` in **YourTarget -> General -> Frameworks, Libraries & and Embeded Content**. 
 
@@ -678,26 +676,61 @@ IDentitySDK.identifyCustomer(from: self) { result in
 
 <br />
 
+### 8) Autofill.  
+
+For `autofill` you need to use below method of from a  `UIViewController`. If successful, call `submit` to send the result to the server.  
+
+  -   <u>**IDentitySDK  /  IDentityMediumSDK**</u> : For `IDentitySDK  /  IDentityMediumSDK` flavours user needs to use below API call method for `autofill`. 
+  
+```swift
+// start autofill, presenting it from view controller(self)
+
+IDentitySDK.autofill(from: self) { result in
+    switch result {
+        case .success(let autofillResult):
+
+            // submit the successful result to the server
+            autofillResult.submit { result in
+                switch result {
+                    case .success(let response):
+                        // Review successful response from the server
+                        print(response)
+                        
+                    case .failure(let error):
+                        // Handle error
+                        print(error.localizedDescription)
+                }
+            }
+
+        case .failure(let error):
+            // Handle error
+            print(error.localizedDescription)
+    }
+}
+```
+
+<br />
+
 ## Optional Customizations
 
   
 -   Before starting an ID Capture flow, optionally adjust the following  [IDCapture](https://demo-documentation.idmission.com/iOS-SDK-2/Classes/IDCapture.html)  static properties:  
 
 ```swift
-IDCapture.frontRealnessThreshold = 0.8
-IDCapture.backRealnessThreshold = 0.8
-IDCapture.frontDocumentConfidence = 0.7
-IDCapture.backDocumentConfidence = 0.7
-IDCapture.lowerWidthThresholdTolerance = 0.2
-IDCapture.upperWidthThresholdTolerance = 0.05
-IDCapture.retryScreenText = "text To Configure"
-IDCapture.retryScreenImageTintColor = UIColor.red
-IDCapture.retryScreenButtonTintColor = UIColor.red
-IDCapture.uploadIdData = true
-IDCapture.capture4K = false
+//IDCapture Customization
+IDCapture.options.frontRealnessThreshold = 0.5
+IDCapture.options.backRealnessThreshold = 0.3
+IDCapture.options.frontDocumentConfidence = 0.7
+IDCapture.options.backDocumentConfidence = 0.7
+IDCapture.options.lowerWidthThresholdTolerance = 0.4
+IDCapture.options.upperWidthThresholdTolerance = 0.1
+IDCapture.options.isDebugMode = true
+IDCapture.options.enableInstructionScreen = true
+IDCapture.options.enableRealId = true
+IDCapture.options.uploadIdData = true
+IDCapture.options.capture4K = true
 
-//IDCapture Camera Screen Customization
-IDCapture Camera Screen Customization
+//IDCapture Camera Screen UI Customization
 IDCapture.strings.captureFront = "Capture Front Side"
 IDCapture.strings.captureBack = "Capture Back Side"
 IDCapture.strings.moveAway = "Move ID Away"
@@ -715,7 +748,7 @@ IDCapture.colors.backgroundColor = .clear
 IDCapture.fonts.captureLabelFont = UIFont.boldSystemFont(ofSize: 14)
 IDCapture.fonts.labelFont = UIFont.systemFont(ofSize: 14)
 
-//IDCapture Retry Screen Customization
+//IDCapture Retry Screen UI Customization
 IDCapture.strings.retryScreenText = "RealID not Detected. Please try again"
 IDCapture.strings.retryButtonText = "Retry"
 IDCapture.strings.cancelButtonText = "Cancel"
@@ -732,24 +765,24 @@ IDCapture.fonts.retryScreenButtonFont = UIFont.systemFont(ofSize: 14)
 -   Before starting a Selfie Capture flow, optionally adjust the following  [SelfieCapture](https://demo-documentation.idmission.com/iOS-SDK-2/Classes/SelfieCapture.html)  static properties:  
 
 ```swift
-SelfieCapture.minFaceWidth = 0.6
-SelfieCapture.eyeOpenProbability = 0.4
-SelfieCapture.minHeadEulerAngle = -10
-SelfieCapture.maxHeadEulerAngle = 10
-SelfieCapture.minRelativeNoseHeight = 0.48
-SelfieCapture.maxRelativeNoseHeight = 0.67
-SelfieCapture.labelsConfidenceThreshold = 0.79
-SelfieCapture.faceMaskProbabilityThreshold = 0.79
-SelfieCapture.liveFaceProbabilityThreshold = 0.9
-SelfieCapture.consecutiveFakeFaceLimit = 10
-SelfieCapture.lightIntensityThreshold = 0.05
-SelfieCapture.capture4K = false
-SelfieCapture.retryScreenText = "text To Configure"
-SelfieCapture.retryScreenImageTintColor = UIColor.red
-SelfieCapture.retryScreenButtonTintColor = UIColor.red
-SelfieCapture.uploadFaceData = true
+//SelfieCapture Customization
+SelfieCapture.options.minFaceWidth = 0.6
+SelfieCapture.options.eyeOpenProbability = 0.4
+SelfieCapture.options.minHeadEulerAngle = -10
+SelfieCapture.options.maxHeadEulerAngle = 10
+SelfieCapture.options.minRelativeNoseHeight = 0.48
+SelfieCapture.options.maxRelativeNoseHeight = 0.67
+SelfieCapture.options.labelsConfidenceThreshold = 0.79
+SelfieCapture.options.faceMaskProbabilityThreshold = 0.79
+SelfieCapture.options.liveFaceProbabilityThreshold = 0.9
+SelfieCapture.options.consecutiveFakeFaceLimit = 10
+SelfieCapture.options.lightIntensityThreshold = 0.05
+SelfieCapture.options.isDebugMode = true
+SelfieCapture.options.enableInstructionScreen = true
+SelfieCapture.options.capture4K = false
+SelfieCapture.options.uploadFaceData = true
 
-//SelfieCapture Camera Screen Customization
+//SelfieCapture Camera Screen UI Customization
 SelfieCapture.strings.alignOval = "Aligh your face inside oval"
 SelfieCapture.strings.moveAway = "Move ID Away"
 SelfieCapture.strings.moveCloser = "Move ID Closer"
@@ -773,7 +806,7 @@ SelfieCapture.colors.successLabelTextColor = .white
 SelfieCapture.colors.errorLabelTextColor = .white
 SelfieCapture.fonts.labelFont = UIFont.systemFont(ofSize: 14)
 
-//SelfieCapture Retry Screen Customization
+//SelfieCapture Retry Screen UI Customization
 SelfieCapture.strings.retryScreenText = "Live face not Detected. Please try again"
 SelfieCapture.strings.retryButtonText = "Retry"
 SelfieCapture.strings.cancelButtonText = "Cancel"
@@ -786,3 +819,20 @@ SelfieCapture.fonts.retryScreenLabelFont = UIFont.systemFont(ofSize: 16)
 SelfieCapture.fonts.retryScreenButtonFont = UIFont.systemFont(ofSize: 14)
 
 ```
+
+## SDK Version History
+  
+### **v 9.3.1.49**
+- Autofill.
+- Added SDK UI Customization.
+- Instruction screens for selfie and ID capture.
+- Replcae `.framework` file with `.xcframework` file which has frameworks for device as well as for simulator.
+
+### **v 9.1.7.31**
+- Live face Check
+- ID Validation
+- ID Validation and face match
+- Enroll Biometric
+- Enroll Customer with ID validation
+- Customer Verification
+- Customer Biometric Verification
