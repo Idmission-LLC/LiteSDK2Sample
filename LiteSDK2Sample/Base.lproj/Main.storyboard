@@ -34,7 +34,7 @@
         <!--View Controller-->
         <scene sceneID="87j-PG-df6">
             <objects>
-                <viewController id="Zlm-6P-Dn0" customClass="ViewController" customModule="SDK2Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Zlm-6P-Dn0" customClass="ViewController" customModule="LiteSDK2Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Iff-3U-XH5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -197,6 +197,15 @@
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.1843137255" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SDK Version : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6g-jP-2Zy">
+                                <rect key="frame" x="156" y="827" width="102.5" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="yUO-HS-Mmv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="m0K-ih-fBl"/>
                         <color key="backgroundColor" red="0.95119315390000003" green="0.98285824060000004" blue="0.98294633629999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -205,8 +214,10 @@
                             <constraint firstItem="OVv-M9-Ery" firstAttribute="top" secondItem="csE-g2-uN1" secondAttribute="bottom" constant="20" id="6NC-Hk-69X"/>
                             <constraint firstItem="OVv-M9-Ery" firstAttribute="leading" secondItem="m0K-ih-fBl" secondAttribute="leading" constant="20" id="6ou-pT-aLW"/>
                             <constraint firstItem="csE-g2-uN1" firstAttribute="top" secondItem="m0K-ih-fBl" secondAttribute="top" constant="20" id="Ql8-XN-v2g"/>
+                            <constraint firstItem="m0K-ih-fBl" firstAttribute="bottom" secondItem="v6g-jP-2Zy" secondAttribute="bottom" constant="13" id="aEO-sK-tgi"/>
                             <constraint firstItem="OVv-M9-Ery" firstAttribute="centerX" secondItem="Iff-3U-XH5" secondAttribute="centerX" id="d2X-ft-SZo"/>
                             <constraint firstItem="csE-g2-uN1" firstAttribute="leading" secondItem="m0K-ih-fBl" secondAttribute="leading" constant="20" id="eJc-V6-Dbb"/>
+                            <constraint firstItem="v6g-jP-2Zy" firstAttribute="centerX" secondItem="Iff-3U-XH5" secondAttribute="centerX" id="ny3-vF-f1r"/>
                             <constraint firstItem="Gbr-6m-hsM" firstAttribute="centerX" secondItem="Iff-3U-XH5" secondAttribute="centerX" id="oFM-7w-DQz"/>
                             <constraint firstItem="Gbr-6m-hsM" firstAttribute="centerY" secondItem="Iff-3U-XH5" secondAttribute="centerY" id="xZa-qF-Jsl"/>
                         </constraints>
@@ -218,6 +229,7 @@
                         <outlet property="loginID_Textfield" destination="Txo-4d-eh7" id="DYh-gv-8zy"/>
                         <outlet property="merchantID_Textfield" destination="kz4-XR-f3B" id="ydN-u3-pfx"/>
                         <outlet property="password_Textfield" destination="0un-LI-904" id="aB1-Sa-6ym"/>
+                        <outlet property="sdkVersion_Label" destination="v6g-jP-2Zy" id="1bC-m6-6Gp"/>
                         <outlet property="templateURL_Textfield" destination="feJ-wa-5KG" id="66r-tt-oas"/>
                         <segue destination="yIg-cG-Mkv" kind="show" identifier="CompleteKYC_SegueID" id="OBO-AC-AoK"/>
                     </connections>
@@ -229,7 +241,7 @@
         <!--View Controller-->
         <scene sceneID="sjw-pX-cFT">
             <objects>
-                <viewController id="yIg-cG-Mkv" customClass="KYCViewController" customModule="SDK2Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yIg-cG-Mkv" customClass="KYCViewController" customModule="LiteSDK2Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LUr-4a-kAE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

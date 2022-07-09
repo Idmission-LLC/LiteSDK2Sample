@@ -747,6 +747,9 @@ IDCapture.colors.errorLabelTextColor = .white
 IDCapture.colors.backgroundColor = .clear
 IDCapture.fonts.captureLabelFont = UIFont.boldSystemFont(ofSize: 14)
 IDCapture.fonts.labelFont = UIFont.systemFont(ofSize: 14)
+IDCapture.images.frontSilhouetteImage = UIImage(named: "IdFrontOverlay")
+IDCapture.images.backSilhouetteImage = UIImage(named: "IdBackOverlay")
+IDCapture.images.retryScreenImage = UIImage(named: "IdRetryImage")
 
 //IDCapture Retry Screen UI Customization
 IDCapture.strings.retryScreenText = "RealID not Detected. Please try again"
@@ -783,7 +786,7 @@ SelfieCapture.options.capture4K = false
 SelfieCapture.options.uploadFaceData = true
 
 //SelfieCapture Camera Screen UI Customization
-SelfieCapture.strings.alignOval = "Aligh your face inside oval"
+SelfieCapture.strings.alignOval = "Align your face inside oval"
 SelfieCapture.strings.moveAway = "Move ID Away"
 SelfieCapture.strings.moveCloser = "Move ID Closer"
 SelfieCapture.strings.leftEyeClosed = "Left eye are closed"
@@ -805,6 +808,8 @@ SelfieCapture.colors.errorLabelBackgroundColor = .red
 SelfieCapture.colors.successLabelTextColor = .white
 SelfieCapture.colors.errorLabelTextColor = .white
 SelfieCapture.fonts.labelFont = UIFont.systemFont(ofSize: 14)
+SelfieCapture.images.silhouetteImage = UIImage(named: "Selfiecapture")
+SelfieCapture.images.retryScreenImage = UIImage(named: "SelfieRetryImage")
 
 //SelfieCapture Retry Screen UI Customization
 SelfieCapture.strings.retryScreenText = "Live face not Detected. Please try again"
@@ -822,6 +827,10 @@ SelfieCapture.fonts.retryScreenButtonFont = UIFont.systemFont(ofSize: 14)
 
 ## SDK Version History
   
+### **v 9.3.1.50**
+- Added properties to customize Images of SelfieCapture screen & Retry screen.
+- Added properties to customize Images of IdCapture screen & Retry screen.
+
 ### **v 9.3.1.49**
 - Autofill.
 - Added SDK UI Customization.

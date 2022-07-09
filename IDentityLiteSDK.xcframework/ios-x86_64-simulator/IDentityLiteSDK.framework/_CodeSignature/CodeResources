@@ -22,7 +22,7 @@
 		</data>
 		<key>GoogleMVFaceDetectorResources.bundle/Info.plist</key>
 		<data>
-		cQCXONGDCVQkrhXdk0LBC0g0Zmo=
+		ONNsBgv+DefgTAQn6i/+rk15HM0=
 		</data>
 		<key>GoogleMVFaceDetectorResources.bundle/LMprec_600.emd</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>GoogleMVFaceDetectorResources.bundle/_CodeSignature/CodeDirectory</key>
 		<data>
-		Zv2lYfaC+Z1VlXhKq4QrOeYiVCo=
+		c3gxW+fEyoJm0Rl3lpD6oU6XRpk=
 		</data>
 		<key>GoogleMVFaceDetectorResources.bundle/_CodeSignature/CodeRequirements</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>GoogleMVFaceDetectorResources.bundle/_CodeSignature/CodeRequirements-1</key>
 		<data>
-		0DPQM+ci3qtZfkM5+rg7agZxEVw=
+		wkALXjhh2p5GhBVmguoXM7H/amY=
 		</data>
 		<key>GoogleMVFaceDetectorResources.bundle/_CodeSignature/CodeResources</key>
 		<data>
@@ -86,7 +86,7 @@
 		</data>
 		<key>Headers/IDentityLiteSDK-Swift.h</key>
 		<data>
-		VEmMSw+AbF97BGs0HikJAVXzjGE=
+		L5EMO7E0OAzi86Yhe5hNH+uW7Gg=
 		</data>
 		<key>Headers/IDentityLiteSDK.h</key>
 		<data>
@@ -210,23 +210,23 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		YVxkFVB38loqBC4bVwFxTBS3MsA=
+		mquq8da6jjVCchgP+P1pgNdq68w=
 		</data>
 		<key>Modules/IDentityLiteSDK.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		LAnNCKXSsvh8L+iZpOq+p/qPIto=
+		S4a7FlScBc59SybR79CXgHYT2ug=
 		</data>
 		<key>Modules/IDentityLiteSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		QRCy4R/os7Ns3WXWLQ0jU0B1ioQ=
+		L+gAxbzggc9/BHwM/nHnpGAmL2g=
 		</data>
 		<key>Modules/IDentityLiteSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		AN+bcdaHjHlsvaSlehK7WZ4mE/4=
+		rzFfSDT0gJMLATmRxDeN4NcB+iI=
 		</data>
 		<key>Modules/IDentityLiteSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		eAPHq4o0ATQph9Ir/30HL9YtROs=
+		bTnH4D5JpfO4YymlKYT5g7OguSY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -271,7 +271,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YwtIG5ZZAPwW1BRJYZxCl9EDuoaA76gY+kKLPkEct2Q=
+			zlt1AI9tOI35uVw+qYFMqW/x9jcXVk/kNQzYZQt0H7g=
 			</data>
 		</dict>
 		<key>GoogleMVFaceDetectorResources.bundle/LMprec_600.emd</key>
@@ -299,7 +299,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rw8ZHydxFr4HVK1b2eVLSASBzy8oIyMDS6DW/zOQq4c=
+			oKD0QivK8sTs38Ts2dClgzj3PVLGnVW+MXlWPO/69QM=
 			</data>
 		</dict>
 		<key>GoogleMVFaceDetectorResources.bundle/_CodeSignature/CodeRequirements</key>
@@ -313,7 +313,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			h2i0NcgLnWSzpi2Ueob8fGeo3OszunOnfWSL173b+90=
+			3Q4F03M81sRLCLa5huBWcgQ1l8vk3muZ+E6TP5duVxM=
 			</data>
 		</dict>
 		<key>GoogleMVFaceDetectorResources.bundle/_CodeSignature/CodeResources</key>
@@ -383,7 +383,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ydc/rW0plaRtXkLE32NbJ07pfDaDhDyxS354qZn2Y6A=
+			cuIU/Mq9FuLIPaxwzjgYXleX5UTm3wo99KQ/7rrNxS4=
 			</data>
 		</dict>
 		<key>Headers/IDentityLiteSDK.h</key>
@@ -600,28 +600,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			v/104TgyVUMA4h84p/kpfQhyOsNkuMYPNZOZD4VT6FM=
+			Xr0Jmb2Q6Dr6uRM0nCNrxg+t9Pu2MmDxBl2gGvaKYFc=
 			</data>
 		</dict>
 		<key>Modules/IDentityLiteSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nILR3AuwvDFMgFutyjfXtQ5equkbNZm0zyIIGRJUcL0=
+			m8ByAQGOO4ONlyBw/PpuV/fwUwORo2s0nl/mJWEeAYg=
 			</data>
 		</dict>
 		<key>Modules/IDentityLiteSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5HeiQANFHad96ZwhdinFXVucc2SSdHJwBVGQZMuo/ug=
+			97hYGOU/ui762aPfACKEQwLoudNGminnqVAVfgjBBoM=
 			</data>
 		</dict>
 		<key>Modules/IDentityLiteSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3B5EjoFY7gPjeK7G4gbTCu+mPr6V1B4FxVtHIcMg0J8=
+			45/THnqfsF7lCUTCDVgGht6kZBS5aE1S/Q76/9y1QbQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

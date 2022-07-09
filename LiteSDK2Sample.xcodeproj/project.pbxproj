@@ -9,12 +9,6 @@
 /* Begin PBXBuildFile section */
 		0C5F3F2F281EAF86002DAA88 /* ResultScreenFor50.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C5F3F2D281EAF86002DAA88 /* ResultScreenFor50.xib */; };
 		0C5F3F30281EAF86002DAA88 /* ResultScreenFor50.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F3F2E281EAF86002DAA88 /* ResultScreenFor50.swift */; };
-		0C78A64028631DAC0072CA4D /* IDCaptureLite.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C78A63C28631DA50072CA4D /* IDCaptureLite.xcframework */; };
-		0C78A64128631DAC0072CA4D /* IDCaptureLite.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C78A63C28631DA50072CA4D /* IDCaptureLite.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0C78A64228631DAE0072CA4D /* IDentityLiteSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C78A63B28631DA40072CA4D /* IDentityLiteSDK.xcframework */; };
-		0C78A64328631DAE0072CA4D /* IDentityLiteSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C78A63B28631DA40072CA4D /* IDentityLiteSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0C78A64428631DB00072CA4D /* SelfieCaptureLite.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C78A63A28631DA20072CA4D /* SelfieCaptureLite.xcframework */; };
-		0C78A64528631DB00072CA4D /* SelfieCaptureLite.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C78A63A28631DA20072CA4D /* SelfieCaptureLite.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0CA76AC3281C236800B23630 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA76AC2281C236800B23630 /* AppDelegate.swift */; };
 		0CA76AC5281C236800B23630 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA76AC4281C236800B23630 /* SceneDelegate.swift */; };
 		0CA76AC7281C236800B23630 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA76AC6281C236800B23630 /* ViewController.swift */; };
@@ -25,6 +19,12 @@
 		0CA76AF0281C699D00B23630 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA76AEF281C699D00B23630 /* Extensions.swift */; };
 		0CA76AF4281C6A6A00B23630 /* HostDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA76AF2281C6A6A00B23630 /* HostDataModel.swift */; };
 		0CA76AF5281C6A6A00B23630 /* ModelForResultScreenServiceId20.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA76AF3281C6A6A00B23630 /* ModelForResultScreenServiceId20.swift */; };
+		0CF121CC2879C3DF00526F60 /* IDCaptureLite.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF121C62879C3D800526F60 /* IDCaptureLite.xcframework */; };
+		0CF121CD2879C3DF00526F60 /* IDCaptureLite.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF121C62879C3D800526F60 /* IDCaptureLite.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0CF121CE2879C3E100526F60 /* IDentityLiteSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF121C82879C3DC00526F60 /* IDentityLiteSDK.xcframework */; };
+		0CF121CF2879C3E100526F60 /* IDentityLiteSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF121C82879C3DC00526F60 /* IDentityLiteSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0CF121D02879C3E200526F60 /* SelfieCaptureLite.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF121C72879C3D800526F60 /* SelfieCaptureLite.xcframework */; };
+		0CF121D12879C3E200526F60 /* SelfieCaptureLite.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF121C72879C3D800526F60 /* SelfieCaptureLite.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D9E96422E78A08CB42709C24 /* Pods_LiteSDK2Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE07861FD8912A5CB7F22387 /* Pods_LiteSDK2Sample.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,9 +35,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0C78A64328631DAE0072CA4D /* IDentityLiteSDK.xcframework in Embed Frameworks */,
-				0C78A64528631DB00072CA4D /* SelfieCaptureLite.xcframework in Embed Frameworks */,
-				0C78A64128631DAC0072CA4D /* IDCaptureLite.xcframework in Embed Frameworks */,
+				0CF121CF2879C3E100526F60 /* IDentityLiteSDK.xcframework in Embed Frameworks */,
+				0CF121D12879C3E200526F60 /* SelfieCaptureLite.xcframework in Embed Frameworks */,
+				0CF121CD2879C3DF00526F60 /* IDCaptureLite.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,9 +47,6 @@
 /* Begin PBXFileReference section */
 		0C5F3F2D281EAF86002DAA88 /* ResultScreenFor50.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultScreenFor50.xib; sourceTree = "<group>"; };
 		0C5F3F2E281EAF86002DAA88 /* ResultScreenFor50.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultScreenFor50.swift; sourceTree = "<group>"; };
-		0C78A63A28631DA20072CA4D /* SelfieCaptureLite.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SelfieCaptureLite.xcframework; sourceTree = "<group>"; };
-		0C78A63B28631DA40072CA4D /* IDentityLiteSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = IDentityLiteSDK.xcframework; sourceTree = "<group>"; };
-		0C78A63C28631DA50072CA4D /* IDCaptureLite.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = IDCaptureLite.xcframework; sourceTree = "<group>"; };
 		0CA76ABF281C236800B23630 /* LiteSDK2Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiteSDK2Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CA76AC2281C236800B23630 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CA76AC4281C236800B23630 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +59,9 @@
 		0CA76AEF281C699D00B23630 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0CA76AF2281C6A6A00B23630 /* HostDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostDataModel.swift; sourceTree = "<group>"; };
 		0CA76AF3281C6A6A00B23630 /* ModelForResultScreenServiceId20.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelForResultScreenServiceId20.swift; sourceTree = "<group>"; };
+		0CF121C62879C3D800526F60 /* IDCaptureLite.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = IDCaptureLite.xcframework; sourceTree = "<group>"; };
+		0CF121C72879C3D800526F60 /* SelfieCaptureLite.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SelfieCaptureLite.xcframework; sourceTree = "<group>"; };
+		0CF121C82879C3DC00526F60 /* IDentityLiteSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = IDentityLiteSDK.xcframework; sourceTree = "<group>"; };
 		D9293B0F791D36133DA72601 /* Pods-LiteSDK2Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiteSDK2Sample.release.xcconfig"; path = "Target Support Files/Pods-LiteSDK2Sample/Pods-LiteSDK2Sample.release.xcconfig"; sourceTree = "<group>"; };
 		EE07861FD8912A5CB7F22387 /* Pods_LiteSDK2Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiteSDK2Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1FF64696D062ECBE9DCA3DA /* Pods-LiteSDK2Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiteSDK2Sample.debug.xcconfig"; path = "Target Support Files/Pods-LiteSDK2Sample/Pods-LiteSDK2Sample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -72,10 +72,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C78A64228631DAE0072CA4D /* IDentityLiteSDK.xcframework in Frameworks */,
+				0CF121CE2879C3E100526F60 /* IDentityLiteSDK.xcframework in Frameworks */,
 				D9E96422E78A08CB42709C24 /* Pods_LiteSDK2Sample.framework in Frameworks */,
-				0C78A64428631DB00072CA4D /* SelfieCaptureLite.xcframework in Frameworks */,
-				0C78A64028631DAC0072CA4D /* IDCaptureLite.xcframework in Frameworks */,
+				0CF121D02879C3E200526F60 /* SelfieCaptureLite.xcframework in Frameworks */,
+				0CF121CC2879C3DF00526F60 /* IDCaptureLite.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,9 +140,9 @@
 		B54ED9D12CB7B7E1BC952DF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0C78A63C28631DA50072CA4D /* IDCaptureLite.xcframework */,
-				0C78A63B28631DA40072CA4D /* IDentityLiteSDK.xcframework */,
-				0C78A63A28631DA20072CA4D /* SelfieCaptureLite.xcframework */,
+				0CF121C62879C3D800526F60 /* IDCaptureLite.xcframework */,
+				0CF121C82879C3DC00526F60 /* IDentityLiteSDK.xcframework */,
+				0CF121C72879C3D800526F60 /* SelfieCaptureLite.xcframework */,
 				EE07861FD8912A5CB7F22387 /* Pods_LiteSDK2Sample.framework */,
 			);
 			name = Frameworks;
@@ -437,7 +437,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 50;
 				DEVELOPMENT_TEAM = SXB7K82DRL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -455,7 +455,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 9.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.idmission.LiteSDK2Sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -471,7 +471,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 50;
 				DEVELOPMENT_TEAM = SXB7K82DRL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -489,7 +489,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 9.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.idmission.LiteSDK2Sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

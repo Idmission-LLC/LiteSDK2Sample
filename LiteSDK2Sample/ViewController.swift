@@ -16,10 +16,12 @@ class ViewController: UIViewController {
     @IBOutlet var password_Textfield : UITextField!
     @IBOutlet var merchantID_Textfield : UITextField!
     @IBOutlet var activityIndicator : UIActivityIndicatorView!
+    @IBOutlet var sdkVersion_Label : UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        sdkVersion_Label.text = "SDK Version : " + IDentitySDK.version
     }
     
     //Initialize SDK
@@ -73,7 +75,7 @@ class ViewController: UIViewController {
         IDCapture.options.backDocumentConfidence = 0.7
         IDCapture.options.lowerWidthThresholdTolerance = 0.4
         IDCapture.options.upperWidthThresholdTolerance = 0.1
-        IDCapture.options.isDebugMode = true
+        IDCapture.options.isDebugMode = false
         IDCapture.options.enableInstructionScreen = true
         IDCapture.options.enableRealId = true
         IDCapture.options.uploadIdData = true
@@ -96,7 +98,10 @@ class ViewController: UIViewController {
         IDCapture.colors.backgroundColor = .clear
         IDCapture.fonts.captureLabelFont = UIFont.boldSystemFont(ofSize: 14)
         IDCapture.fonts.labelFont = UIFont.systemFont(ofSize: 14)
-        
+//        IDCapture.images.frontSilhouetteImage = UIImage(named: "IdFrontOverlay")
+//        IDCapture.images.backSilhouetteImage = UIImage(named: "IdBackOverlay")
+//        IDCapture.images.retryScreenImage = UIImage(named: "IdRetryImage")
+
         //IDCapture Retry Screen Customization
         IDCapture.strings.retryScreenText = "RealID not Detected. Please try again"
         IDCapture.strings.retryButtonText = "Retry"
@@ -121,13 +126,13 @@ class ViewController: UIViewController {
         SelfieCapture.options.liveFaceProbabilityThreshold = 0.9
         SelfieCapture.options.consecutiveFakeFaceLimit = 10
         SelfieCapture.options.lightIntensityThreshold = 0.05
-        SelfieCapture.options.isDebugMode = true
+        SelfieCapture.options.isDebugMode = false
         SelfieCapture.options.enableInstructionScreen = true
         SelfieCapture.options.capture4K = false
         SelfieCapture.options.uploadFaceData = true
 
         //SelfieCapture Camera Screen Customization
-        SelfieCapture.strings.alignOval = "Aligh your face inside oval"
+        SelfieCapture.strings.alignOval = "Align your face inside oval"
         SelfieCapture.strings.moveAway = "Move ID Away"
         SelfieCapture.strings.moveCloser = "Move ID Closer"
         SelfieCapture.strings.leftEyeClosed = "Left eye are closed"
@@ -149,6 +154,8 @@ class ViewController: UIViewController {
         SelfieCapture.colors.successLabelTextColor = .white
         SelfieCapture.colors.errorLabelTextColor = .white
         SelfieCapture.fonts.labelFont = UIFont.systemFont(ofSize: 14)
+//        SelfieCapture.images.silhouetteImage = UIImage(named: "Selfiecapture")
+//        SelfieCapture.images.retryScreenImage = UIImage(named: "SelfieRetryImage")
 
         //SelfieCapture Retry Screen Customization
         SelfieCapture.strings.retryScreenText = "Live face not Detected. Please try again"
