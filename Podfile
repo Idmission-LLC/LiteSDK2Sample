@@ -6,10 +6,11 @@ target 'LiteSDK2Sample' do
   use_frameworks!
 
   # Pods for LiteSDK2Sample
-  pod 'TensorFlowLiteSwift'
-  pod 'GoogleMLKit/FaceDetection'
-  pod 'ZXingObjC'
-  pod 'GZIP'
-  pod 'SSZipArchive'
+    pod 'IDentityLiteSDK2.0'
+    pod 'TensorFlowLiteSwift'
+    pod 'GoogleMLKit/FaceDetection'
+    pod 'ZXingObjC'
+    pod 'GZIP'
+    pod 'SSZipArchive'
 
 end

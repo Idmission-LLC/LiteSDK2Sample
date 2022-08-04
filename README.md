@@ -89,6 +89,7 @@ Note: When using the IDentity SDK, you do not need to create a request for XML; 
 - **IDentitySDK**  *dependencies*.  
     
 ```swift
+pod 'IDentitySDK2.0'
 pod 'TensorFlowLiteSwift'
 pod 'GoogleMLKit/TextRecognition'
 pod 'GoogleMLKit/FaceDetection'
@@ -101,6 +102,7 @@ pod 'SSZipArchive'
 - **IDentityMediumSDK**  *dependencies*.  
     
 ```swift
+pod 'IDentityMediumSDK2.0'
 pod 'TensorFlowLiteSwift'
 pod 'GoogleMLKit/TextRecognition'
 pod 'GoogleMLKit/FaceDetection'
@@ -112,6 +114,7 @@ pod 'SSZipArchive'
 - **IDentityLiteSDK**  *dependencies*. 
 
 ```swift
+pod 'IDentityLiteSDK2.0'
 pod 'TensorFlowLiteSwift'
 pod 'GoogleMLKit/FaceDetection'
 pod 'ZXingObjC'
@@ -150,26 +153,7 @@ end
 
 5) Run `pod install` to install the dependencies.  
 
-6) As per requirement download the framework zip file which is mentioned in [SDK Flavours Download Links](#SDK-Flavours-Download-Links) section. On downloading the zip file, unzip it & you will be able to see respective xcframeworks files in unzipped folder.  
-
-- **IDentitySDK** : To integrate IDentitySDK drag & drop following files in your project.
-    - `IDentitySDK_Swift.xcframework`
-    - `IDCapture_Swift.xcframework`
-    - `SelfieCapture_Swift.xcframework`
-    
-- **IDentityMediumSDK** : To integrate IDentityMediumSDK drag & drop following files in your project.
-    - `IDentityMediumSDK.xcframework`
-    - `IDCaptureMedium.xcframework`
-    - `SelfieCaptureMedium.xcframework`
-
-- **IDentityLiteSDK** : To integrate IDentityLiteSDK drag & drop following files in your project.
-    - `IDentityLiteSDK.xcframework`
-    - `IDCaptureLite.xcframework`
-    - `SelfieCaptureLite.xcframework`
-
-7) Once added respective frameworks in your project, make sure to make it all as a `Embed & Sign` in **YourTarget -> General -> Frameworks, Libraries & and Embeded Content**. 
-
-8) Add an [`NSCameraUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) key to the app's `Info.plist` to allow camera access.  
+6) Add an [`NSCameraUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) key to the app's `Info.plist` to allow camera access.  
 
 <br />
 
