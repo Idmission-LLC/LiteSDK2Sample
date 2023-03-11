@@ -74,8 +74,6 @@ class ViewController: UIViewController {
         IDCapture.options.frontDocumentConfidence = 0.7
         IDCapture.options.backDocumentConfidence = 0.7
         IDCapture.options.documentComponentConfidence = 0.5
-        IDCapture.options.focusThreshold = 0.95
-//        IDCapture.options.minimumFocusThreshold = 0.75
         IDCapture.options.lowerWidthThresholdTolerance = 0.4
         IDCapture.options.upperWidthThresholdTolerance = 0.1
         IDCapture.options.isDebugMode = false
@@ -93,7 +91,6 @@ class ViewController: UIViewController {
         IDCapture.strings.makeSurePhotoTextVisible = "Make Sure Photo & Text are Visible in ID"
         IDCapture.strings.makeSureBarcodeVisible = "Make sure Barcode is visible"
         IDCapture.strings.alignRectangle = "Align ID inside Rectangle"
-        IDCapture.strings.notInFocus = "Not In Focus"
         IDCapture.strings.flipToBack = "Flip To Back side"
         IDCapture.strings.tooMuchGlare = "Too Much Glare"
         IDCapture.colors.overlayTopViewColor = .clear
@@ -167,7 +164,7 @@ class ViewController: UIViewController {
         SelfieCapture.strings.leftEyeClosed = "Left eye are closed"
         SelfieCapture.strings.rightEyeClosed = "right eye are closed"
         SelfieCapture.strings.faceMaskDetected = "Face mask detected"
-        SelfieCapture.strings.glassesDetected = "Glasses Detected"
+        SelfieCapture.strings.sunglassesDetected = "Glasses Detected"
         SelfieCapture.strings.removeHat = "Hat Detected"
         SelfieCapture.strings.fakeFace = "Fake face Detected"
         SelfieCapture.strings.realFace = "Real face Detected"

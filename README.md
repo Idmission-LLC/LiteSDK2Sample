@@ -35,7 +35,7 @@ The IDmission IDentity SDK is a comprehensive toolkit that enables the use of an
 |**6. OCR from front**|On Server|On Server|On Server|
 |**7. Face detect**|On Device|On Device|On Device|
 |**8. Liveness detect**|On Device|On Device|On Device|
-|**9. Detect hats and glasses**|On Device|On Server|On Server|
+|**9. Detect hats and sunglasses**|On Device|On Server|On Server|
   
 <br />
 
@@ -65,6 +65,9 @@ The IDmission IDentity SDK is a comprehensive toolkit that enables the use of an
 **Additional Features -** In addition to above main features, end user can add below feature as additional feature in existing main feature.
 
 - [Document Capture](#9-additional-document-capture)
+- [Signature Capture](#10-signature-capture)
+- [FingerPrint Capture](#11-fingerprint-capture)
+- [Video Capture](#12-video-capture)
 
 
 Additional functions are also detailed in the <a href="./Classes/IDentitySDK.html">SDK Documentation</a><br/>
@@ -110,17 +113,24 @@ To add IDentitySDK2.0 manually, As per your requirement choose any SDK flavour &
     - `IDentitySDK_Swift.xcframework`
     - `IDCapture_Swift.xcframework`
     - `SelfieCapture_Swift.xcframework`
+    - `SignatureCapture_Swift.xcframework` (Optional) : If developer required this feature they can use this framework.
+    - `FingerPrintCapture_Swift.xcframework` (Optional) : If developer required this feature they can use this framework.
+    - `VideoCapture_Swift.xcframework` (Optional) : If developer required this feature they can use this framework.
 
 - [Download IDentityMediumSDK2.0](https://drive.google.com/file/d/1iBY2AKyIWTsVLv2-Q1TaZ1LsjvTT0Wh5/view?usp=sharing) : Drag & drop following files in your project
     - `IDentityMediumSDK.xcframework`
     - `IDCaptureMedium.xcframework`
     - `SelfieCaptureMedium.xcframework`
+    - `SignatureCaptureMedium.xcframework` (Optional) : If developer required this feature they can use this framework.
+    - `FingerPrintCaptureMedium.xcframework` (Optional) : If developer required this feature they can use this framework.
 
 - [Download IDentityLiteSDK2.0](https://drive.google.com/file/d/1ns5Vjr7jSLs30s2lXXwdruNpM8xpegIU/view?usp=sharing) : Drag & drop following files in your project
     - `IDentityLiteSDK.xcframework`
     - `IDCaptureLite.xcframework`
     - `SelfieCaptureLite.xcframework`
-  
+    - `SignatureCaptureLite.xcframework` (Optional) : If developer required this feature they can use this framework.
+    - `FingerPrintCaptureLite.xcframework` (Optional) : If developer required this feature they can use this framework.
+
 Once added respective `.xcframeworks` in your project, make sure to make it all as a `Embed & Sign` in **YourTarget -> General -> Frameworks, Libraries & and Embeded Content**.
 
 ### **Step 4:** Add Required Dependencies
@@ -133,9 +143,7 @@ pod 'TensorFlowLiteSwift', '~> 2.7.0'
 pod 'GoogleMLKit/TextRecognition'
 pod 'GoogleMLKit/FaceDetection'
 pod 'GoogleMLKit/ImageLabeling'
-pod 'ZXingObjC'
 pod 'GZIP'
-pod 'SSZipArchive'
 ```
     
 - **IDentityMediumSDK2.0**  *dependencies*.  
@@ -144,9 +152,7 @@ pod 'SSZipArchive'
 pod 'TensorFlowLiteSwift', '~> 2.7.0'
 pod 'GoogleMLKit/TextRecognition'
 pod 'GoogleMLKit/FaceDetection'
-pod 'ZXingObjC'
 pod 'GZIP'
-pod 'SSZipArchive'
 ```
 
 - **IDentityLiteSDK2.0**  *dependencies*. 
@@ -155,7 +161,6 @@ pod 'SSZipArchive'
 pod 'TensorFlowLiteSwift', '~> 2.7.0'
 pod 'GoogleMLKit/FaceDetection'
 pod 'GZIP'
-pod 'SSZipArchive'
 ```
 
 ### **Step 5:** Steps to reduce size of your app bundle (Optional steps)
@@ -211,6 +216,9 @@ Add an [`NSCameraUsageDescription`](https://developer.apple.com/documentation/bu
 import IDentitySDK_Swift
 import IDCapture_Swift
 import SelfieCapture_Swift
+import SignatureCapture_Swift (Its optional framework as per business requirement)
+import FingerPrintCapture_Swift (Its optional framework as per business requirement)
+import VideoCapture_Swift (Its optional framework as per business requirement)
 ```
     
 - To integrate **IDentityMediumSDK** import Following frameworks.  
@@ -220,6 +228,8 @@ import SelfieCapture_Swift
 import IDentityMediumSDK
 import IDCaptureMedium
 import SelfieCaptureMedium
+import SignatureCaptureMedium (Its optional framework as per business requirement)
+import FingerPrintCaptureMedium (Its optional framework as per business requirement)
 ```
     
 - To integrate **IDentityLiteSDK** import Following frameworks.  
@@ -229,6 +239,8 @@ import SelfieCaptureMedium
 import IDentityLiteSDK
 import IDCaptureLite
 import SelfieCaptureLite
+import SignatureCaptureLite (Its optional framework as per business requirement)
+import FingerPrintCaptureLite (Its optional framework as per business requirement)
 ```
     
 As per requirement once you importing above frameworks, you need to Call the following method.  
@@ -240,8 +252,8 @@ let password = "" // PASSWORD provided by IDmission
 let merchantId = "" // MERCHANT_ID provided by IDmission
 
 //Before Initialization of SDK pass the url values to following `IDentitySDK` static properties.
-IDentitySDK.templateModelBaseURL = "https://" // URL provided by IDmission
-IDentitySDK.apiBaseURL = "https://" // URL provided by IDmission
+IDentitySDK.templateModelBaseURL = "https://kyc.idmission.com/IDS/service/"
+IDentitySDK.apiBaseURL = "https://api.idmission.com/v2/"
 
 IDentitySDK.initializeSDK(loginId: loginId, password: password, merchantId: merchantId) { error in
     if let error = error {
@@ -759,6 +771,83 @@ IDentitySDK.documentCapture(from: self, documentName: documentName, uploadDocume
 ```
 
 <br />
+
+### 10) Signature Capture.  
+
+For `Signature Capture` you need to use below method from a `UIViewController`. If successful, call `submit` to send the result to the server.  
+
+  -   <u>**IDentitySDK  /  IDentityMediumSDK  /  IDentityLiteSDK**</u> : For `IDentitySDK  /  IDentityMediumSDK /  IDentityLiteSDK` flavours user needs to use below API call method for `Signature Capture`. 
+  
+```swift
+// start Signature Capture, presenting it from view controller(self)
+
+IDentitySDK.signatureCapture(from: self) { signatureResult in
+    switch signatureResult {
+        case .success(let signatureData):
+            // Review successful response from the server
+            print(signatureData)
+        case .failure(let error):
+            // Handle error
+            print(error.localizedDescription)
+    }
+}
+```
+
+<br />
+
+### 11) FingerPrint Capture.  
+
+For `FingerPrint Capture` you need to use below method from a `UIViewController`. If successful, call `submit` to send the result to the server.  
+
+  -   <u>**IDentitySDK  /  IDentityMediumSDK  /  IDentityLiteSDK**</u> : For `IDentitySDK  /  IDentityMediumSDK /  IDentityLiteSDK` flavours user needs to use below API call method for `FingerPrint Capture`. 
+  
+```swift
+// start FingerPrint Capture, presenting it from view controller(self)
+
+IDentitySDK.fingerPrintCapture(from: self) { fingerPrintResult in
+    switch fingerPrintResult {
+        case .success(let fingerPrintData):
+            // Review successful response from the server
+            print(fingerPrintData)
+        case .failure(let error):
+            // Handle error
+            print(error.localizedDescription)
+    }
+}
+```
+
+<br />
+
+### 12) Video Capture.  
+
+For `Video Capture` you first need to successfully complete the `ID Validation` flow from item <b>2)</b> above before passing the `front` and `back` `DetectedData` items from the `ValidateIdResult` to the below method presented from a `UIViewController`.
+
+  -   <u>**IDentitySDK**</u> : For `IDentitySDK` flavour user needs to use below API call method for `Video Capture`. 
+  
+```swift
+// Text for the user to read aloud during video recording.
+let text = "..."
+
+// Start Video Capture, presenting it from view controller(self)
+
+IDentitySDK.videoIDCapture(from: self, front: lastValidateIdResult.front, back: lastValidateIdResult.back, text: text) { result in
+    switch result {
+    case .success(let videoIdResult):
+        // Copy or move the video from its temporary location to the documents folder.
+        // (The temporary video will be removed once this method returns.)
+        let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let url = documentDirectory.appendingPathComponent("video.mp4")
+        try? FileManager.default.moveItem(at: videoIdResult.videoURL, to: url)
+
+        // Review successful video ID result.
+        print(videoIdResult)
+    case .failure(let error):
+        // Handle error.
+        print(error.localizedDescription)
+    }
+}
+```
+
 ## Optional Customizations
 
   
@@ -771,8 +860,6 @@ IDCapture.options.backRealnessThreshold = 0.3
 IDCapture.options.frontDocumentConfidence = 0.7
 IDCapture.options.backDocumentConfidence = 0.7
 IDCapture.options.documentComponentConfidence = 0.5
-IDCapture.options.focusThreshold = 0.95
-IDCapture.options.minimumFocusThreshold = 0.75
 IDCapture.options.lowerWidthThresholdTolerance = 0.4
 IDCapture.options.upperWidthThresholdTolerance = 0.1
 IDCapture.options.isDebugMode = true
@@ -790,9 +877,12 @@ IDCapture.strings.moveCloser = "Move ID Closer"
 IDCapture.strings.makeSurePhotoTextVisible = "Make Sure Photo & Text are Visible in ID"
 IDCapture.strings.makeSureBarcodeVisible = "Make sure Barcode is visible"
 IDCapture.strings.alignRectangle = "Align ID inside Rectangle"
-IDCapture.strings.notInFocus = "Not In Focus"
 IDCapture.strings.flipToBack = "Flip To Back side"
 IDCapture.strings.tooMuchGlare = "Too Much Glare"
+IDCapture.strings.useFront = "Scan the front of ID"
+IDCapture.strings.scanBarcode = "Scan the barcode"
+IDCapture.strings.frontBackMismatch = "ID front and back do not match. Please try again."
+IDCapture.strings.autofillPrompt = "Place the barcode or machine-readable zone of your ID in the rectangle."
 IDCapture.colors.overlayTopViewColor = .white
 IDCapture.colors.closeButtonTextColor = .black
 IDCapture.colors.closeButtonColor = .white
@@ -818,6 +908,8 @@ IDCapture.images.bottomInfoImage = UIImage(named: "IdiInfo")
 IDCapture.strings.instructionScreenText = "Lorem ipsum text"
 IDCapture.strings.instructionScreenButtonText = "Continue"
 IDCapture.colors.instructionScreenBackgroundColor = .white
+IDCapture.colors.instructionScreenTextBackgroundColor = .gray
+IDCapture.colors.instructionScreenBackButtonImageTintColor = .orange
 IDCapture.colors.instructionScreenImageTintColor = .white
 IDCapture.colors.instructionScreenLabelTextColor = .black
 IDCapture.colors.instructionScreenButtonTextColor = .white
@@ -825,6 +917,7 @@ IDCapture.colors.instructionScreenButtonBackgroundColor = .gray
 IDCapture.fonts.instructionScreenLabelFont = UIFont.systemFont(ofSize: 20)
 IDCapture.fonts.instructionScreenButtonFont = UIFont.systemFont(ofSize: 20)
 IDCapture.images.instructionScreenImage = UIImage(named: "IDCaptureImage")
+IDCapture.images.instructionBackButtonImage = UIImage(named: "IDCaptureImage")
 
 //IDCapture Retry Screen UI Customization
 IDCapture.strings.retryScreenText = "RealID not Detected. Please try again"
@@ -862,6 +955,8 @@ SelfieCapture.options.capture4K = false
 SelfieCapture.options.uploadFaceData = true
 
 //SelfieCapture Camera Screen UI Customization
+SelfieCapture.strings.captureSelfie = "Capture Selfie"
+SelfieCapture.strings.multipleFacesDetected = "Multiple Faces Detected"
 SelfieCapture.strings.closeButtonText = "Cancel"
 SelfieCapture.strings.alignOval = "Align your face inside oval"
 SelfieCapture.strings.moveAway = "Move Face Away"
@@ -869,7 +964,7 @@ SelfieCapture.strings.moveCloser = "Move Face Closer"
 SelfieCapture.strings.leftEyeClosed = "Left eye are closed"
 SelfieCapture.strings.rightEyeClosed = "right eye are closed"
 SelfieCapture.strings.faceMaskDetected = "Face mask detected"
-SelfieCapture.strings.glassesDetected = "Glasses Detected"
+SelfieCapture.strings.sunglassesDetected = "Sunglasses Detected"
 SelfieCapture.strings.removeHat = "Hat Detected"
 SelfieCapture.strings.fakeFace = "Fake face Detected"
 SelfieCapture.strings.realFace = "Real face Detected"
@@ -899,6 +994,8 @@ SelfieCapture.images.bottomInfoImage = UIImage(named: "Selfieinfo")
 SelfieCapture.strings.instructionScreenText = "Lorem ipsum text"
 SelfieCapture.strings.instructionScreenButtonText = "Continue"
 SelfieCapture.colors.instructionScreenBackgroundColor = .white
+SelfieCapture.colors.instructionScreenTextBackgroundColor = .orange
+SelfieCapture.colors.instructionScreenBackButtonImageTintColor = .gray
 SelfieCapture.colors.instructionScreenImageTintColor = .white
 SelfieCapture.colors.instructionScreenLabelTextColor = .black
 SelfieCapture.colors.instructionScreenButtonTextColor = .white
@@ -906,6 +1003,7 @@ SelfieCapture.colors.instructionScreenButtonBackgroundColor = .gray
 SelfieCapture.fonts.instructionScreenLabelFont = UIFont.systemFont(ofSize: 20)
 SelfieCapture.fonts.instructionScreenButtonFont = UIFont.systemFont(ofSize: 20)
 SelfieCapture.images.instructionScreenImage = UIImage(named: "SelfieCaptureImage")
+SelfieCapture.images.instructionBackButtonImage = UIImage(named: "BackButtonImage")
 
 //SelfieCapture Retry Screen UI Customization
 SelfieCapture.strings.retryScreenText = "Live face not Detected. Please try again"
@@ -987,7 +1085,94 @@ DocumentCapture.images.retryScreenImage = UIImage(named: "IdRetryImage")
 
 ```
 
+-   Before starting either Capture flow, optionally adjust the following <a href="./Classes/SignatureCapture.html">SignatureCapture</a> static properties:
+
+```swift
+//SignatureCapture Customization
+SignatureCapture.options.signatureStrokeWidth = 2
+
+//SignatureCapture Screen UI Customization
+SignatureCapture.strings.titleText = "Sign"
+SignatureCapture.strings.clearButtonText = "Clear"
+SignatureCapture.strings.doneButtonText = "Done"
+
+SignatureCapture.colors.titleLabelColor = .clear
+SignatureCapture.colors.titleLabelTextColor = .black
+SignatureCapture.colors.backButtonColor = .clear
+SignatureCapture.colors.backButtonTintColor = .systemBlue
+SignatureCapture.colors.backgroundColor = .white
+SignatureCapture.colors.signatureStrokeColor = .black
+SignatureCapture.colors.clearButtonColor = .gray
+SignatureCapture.colors.clearButtonTextColor = .white
+SignatureCapture.colors.doneButtonColor = .gray
+SignatureCapture.colors.doneButtonTextColor = .white
+SignatureCapture.fonts.titleLabelTextFont = UIFont.systemFont(ofSize: 18)
+SignatureCapture.fonts.clearButtonTextFont = UIFont.systemFont(ofSize: 14)
+SignatureCapture.fonts.doneButtonTextFont = UIFont.systemFont(ofSize: 14)
+
+```
+
+-   Before starting either Capture flow, optionally adjust the following <a href="./Classes/FingerPrintCapture.html">FingerPrintCapture</a> static properties:
+
+```swift
+//FingerPrintCapture InstructionScreen Customization
+FingerPrintCapture.images.instructionScreenImage = UIImage(named: "fingerPrintInstructionImage")
+FingerPrintCapture.images.instructionScreenLeftHandButtonImage = UIImage(named: "leftHandImage")
+FingerPrintCapture.images.instructionScreenRightHandButtonImage = UIImage(named: "rightHandImage")
+FingerPrintCapture.colors.instructionScreenBackgroundColor = .gray
+FingerPrintCapture.colors.instructionScreenBackButtonColor = .clear
+FingerPrintCapture.colors.instructionScreenBackButtonTintColor = .black
+FingerPrintCapture.colors.instructionScreenImageTintColor = .clear
+FingerPrintCapture.colors.instructionScreenLeftHandButtonColor = .white
+FingerPrintCapture.colors.instructionScreenRightHandButtonColor = .white
+
+//FingerPrintCapture Camera Screen UI Customization
+FingerPrintCapture.options.enableInstructionScreen = false
+FingerPrintCapture.options.isDebugEnabled = true
+FingerPrintCapture.options.isCaptureLeftHand = true
+FingerPrintCapture.options.cameraZoom = 1.0
+FingerPrintCapture.options.captureIndexFinger = true
+FingerPrintCapture.options.captureMiddleFinger = false
+FingerPrintCapture.options.captureRingFinger = false
+FingerPrintCapture.options.captureBabyFinger = false
+FingerPrintCapture.options.keepIndexFinger = true
+FingerPrintCapture.options.keepMiddleFinger = false
+FingerPrintCapture.options.keepRingFinger = false
+FingerPrintCapture.options.keepBaby = false
+FingerPrintCapture.options.minIndexThrshold = 40
+FingerPrintCapture.options.minMiddleThrshold = 40
+FingerPrintCapture.options.minRingThrshold = 40
+FingerPrintCapture.options.minBabyThrshold = 40
+FingerPrintCapture.options.maxIndexThrshold = 100
+FingerPrintCapture.options.maxMiddleThrshold = 100
+FingerPrintCapture.options.maxRingThrshold = 100
+FingerPrintCapture.options.maxBabyThrshold = 70
+FingerPrintCapture.strings.moveCloser = "Move Closer"
+FingerPrintCapture.strings.moveAway = "Move Away"
+FingerPrintCapture.strings.incorrectHand = "Incorrect Hand"
+FingerPrintCapture.strings.holdSteady = "Hold Steady"
+FingerPrintCapture.strings.capturingDetail = "Capturing Details"
+FingerPrintCapture.strings.fingerTooClose = "Too Close"
+FingerPrintCapture.strings.fingerTooFar = "Too Far"
+
+```
+
+
 ## SDK Version History
+
+### **v 9.4.8.2.1**
+- Added VideoIDCapture support
+- Added SignatureCapture support
+- Added FingerPrintCapture support
+
+### **v 9.3.10.2.26**
+- Added spanish language support
+- Now fitting instead of filling the camera preview to better support the 600px height requirement.
+- Implemented new AES/GCM/NoPadding algorithm.
+- Handle the CAN BC DL barcode XSLT
+- Added additional customer response data parameters like `state` and `postalCode`.
+- Alerting the user when multiple faces are detected during selfie capture.
+- Updated instruction screen for IDCapture & SelfieCapture
 
 ### **v 9.3.4.2.8**
 - Added a minimum focus threshold so that if a classified ID is not above the required focus threshold it will show “Not In Focus” to the user for 15 seconds before attempting to fallback to the minimum focus threshold.

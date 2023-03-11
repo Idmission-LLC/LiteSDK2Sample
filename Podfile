@@ -7,10 +7,8 @@ target 'LiteSDK2Sample' do
 
   # Pods for LiteSDK2Sample
     pod 'IDentityLiteSDK2.0'
-    pod 'TensorFlowLiteSwift'
+    pod 'TensorFlowLiteSwift', '~> 2.7.0'
     pod 'GoogleMLKit/FaceDetection'
-    pod 'ZXingObjC'
     pod 'GZIP'
-    pod 'SSZipArchive'
 
 end
