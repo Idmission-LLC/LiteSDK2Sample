@@ -151,6 +151,7 @@ pod 'GoogleMLKit/TextRecognition'
 pod 'GoogleMLKit/FaceDetection'
 pod 'GoogleMLKit/ImageLabeling'
 pod 'GZIP'
+pod 'OpenSSL-Universal', '1.1.180'
 ```
     
 - **IDentityMediumSDK2.0**  *dependencies*.  
@@ -864,8 +865,8 @@ IDentitySDK.videoIDCapture(from: self, front: lastValidateIdResult.front, back: 
 //IDCapture Customization
 IDCapture.options.frontRealnessThreshold = 0.5
 IDCapture.options.backRealnessThreshold = 0.3
-IDCapture.options.frontDocumentConfidence = 0.85
-IDCapture.options.backDocumentConfidence = 0.85
+IDCapture.options.frontDocumentConfidence = 0.7
+IDCapture.options.backDocumentConfidence = 0.7
 IDCapture.options.documentComponentConfidence = 0.5
 IDCapture.options.lowerWidthThresholdTolerance = 0.2
 IDCapture.options.upperWidthThresholdTolerance = 0.05
@@ -875,6 +876,7 @@ IDCapture.options.enableRealId = true
 IDCapture.options.uploadIdData = true
 IDCapture.options.capture4K = true
 IDCapture.options.focusThreshold = 0.3
+IDCapture.options.enablePassportNFC = false
 
 //IDCapture Camera Screen UI Customization
 IDCapture.strings.closeButtonText = "Cancel"
@@ -1044,6 +1046,9 @@ DocumentCapture.options.documentCaptureFrameHeight = 600
 DocumentCapture.options.documentFileSizeLimit = 2.0
 
 //DocumentCapture Camera Screen UI Customization
+DocumentCapture.string.uploadImage = "Upload image"
+DocumentCapture.string.uploadPDF = "Upload PDF"
+DocumentCapture.string.documentPreview = "Document Preview"
 DocumentCapture.strings.closeButtonText = "Cancel"
 DocumentCapture.strings.captureDocument = "Capture Document"
 DocumentCapture.strings.moveAway = "Move ID Away"
@@ -1072,6 +1077,7 @@ DocumentCapture.images.bottomInfoImage = UIImage(named: "IdiInfo")
 DocumentCapture.strings.instructionScreenText = "Lorem ipsum text"
 DocumentCapture.strings.instructionScreenButtonText = "Continue"
 DocumentCapture.colors.instructionScreenBackgroundColor = .blue
+DocumentCapture.colors.instructionScreenBackButtonImageTintColor = .orange
 DocumentCapture.colors.instructionScreenImageTintColor = .white
 DocumentCapture.colors.instructionScreenLabelTextColor = .red
 DocumentCapture.colors.instructionScreenButtonTextColor = .green
@@ -1079,6 +1085,7 @@ DocumentCapture.colors.instructionScreenButtonBackgroundColor = .yellow
 DocumentCapture.fonts.instructionScreenLabelFont = UIFont.systemFont(ofSize: 20)
 DocumentCapture.fonts.instructionScreenButtonFont = UIFont.systemFont(ofSize: 20)
 DocumentCapture.images.instructionScreenImage = UIImage(named: "DocCaptureImage")
+DocumentCapture.images.instructionBackButtonImage = UIImage(named: "BackImage")
 
 //DocumentCapture Retry Screen UI Customization
 DocumentCapture.strings.retryScreenText = "RealID not Detected. Please try again"
@@ -1178,16 +1185,33 @@ VideoCapture.options.backLevenshteinThreshold = 0.45
 VideoCapture.options.readTextCountdownSeconds = 10
 VideoCapture.options.readTextWordMatchThreshold = 0.5
 VideoCapture.options.isDebugMode = false
+VideoCapture.options.frontRealnessThreshold = 0.5
+VideoCapture.options.backRealnessThreshold = 0.3
+VideoCapture.options.enableRealId = false
 
 //VideoCapture Screen UI Customization
 VideoCapture.strings.faceDoesNotMatch = "Face does not match"
 VideoCapture.strings.idDoesNotMatch = "ID does not match"
 VideoCapture.strings.doneButton = "Done"
+VideoCapture.strings.liveFaceLost = @"Live face lost, Please try again."
+VideoCapture.strings.voiceDoesNotMatch = @"Voice does not match, Please try again."
+VideoCapture.colors.readingTextColor = .black
+VideoCapture.colors.readingTextSpokenWordColor = .blue 
+VideoCapture.colors.readingTextBackgroundColor = .clear
 
 ```
 
 
 ## SDK Version History
+
+### **v 9.5.7.2.5**
+- Added Passport NFC feature
+- Minor bug fixes
+
+### **v 9.5.3.2.3**
+- Enhanced capture of passports.
+- Improved Video ID processing procedures
+- Reduced default selfie silhouette size during liveness detection
 
 ### **v 9.5.2.2.3**
 - Downloading all models from server
@@ -1250,3 +1274,4 @@ VideoCapture.strings.doneButton = "Done"
 - Enroll Customer with ID validation
 - Customer Verification
 - Customer Biometric Verification
+
