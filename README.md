@@ -1204,6 +1204,10 @@ VideoCapture.colors.readingTextBackgroundColor = .clear
 
 ## SDK Version History
 
+### **v 9.5.9.2.4**
+- Bug Fixes for Passport NFC detection
+- Bug fixes and performance improvements.
+
 ### **v 9.5.7.2.5**
 - Added Passport NFC feature
 - Minor bug fixes
@@ -1274,4 +1278,3 @@ VideoCapture.colors.readingTextBackgroundColor = .clear
 - Enroll Customer with ID validation
 - Customer Verification
 - Customer Biometric Verification
-
