@@ -39,8 +39,8 @@ class KYCViewController: UIViewController {
     // Service Code 50 - ID Validation And Customer Enroll
     private func startIDValidationAndCustomerEnroll(uniqueNumber: String) {
         
-        let personalData = PersonalCustomerCommonRequestData(uniqueNumber: uniqueNumber)
-        let options = AdditionalCustomerWFlagCommonData()
+        let personalData = PersonalCustomerCommonRequestEnrollDataV3(uniqueNumber: uniqueNumber)
+        let options = AdditionalCustomerWFlagCommonDataV3()
         
         showCaptureTypePrompt { type in
             if type == .captureBack {

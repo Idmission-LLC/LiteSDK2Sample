@@ -234,7 +234,7 @@ extension ResultScreenFor50{
     func submitAPI(customerEnroll_Result : CustomerEnrollResult?) {
         
         //Populate the Processed Result Data
-        customerEnroll_Result?.submit { result, hostData in
+        customerEnroll_Result?.submit { result in
             self.processedResultHeadingLabel.isHidden = false
             self.processedResultActivityIndicator.stopAnimating()
             self.processedResultActivityIndicator.isHidden = true
@@ -349,16 +349,14 @@ extension ResultScreenFor50{
         
     }
     
-    private func show_DMV_AMKKYC_CriRecSexOff_Result(host_Data:HostdataResponse?) {
+    private func show_DMV_AMKKYC_CriRecSexOff_Result(host_Data:HostdataResponseV3?) {
         
-        let hostServerData = hostDataResponse(dictionary: host_Data)
-        
-        let resultDMV      : String? = hostServerData.textMatchResult?.thirdPartyVerificationResultDescription
-        let resultCountPEP : String? = hostServerData.pepresult?.resultCountPEP
-        let resultCountWLS : String? = hostServerData.wlsresult?.resultCountWLS
-        let resultCountNM  : String? = hostServerData.nmresult?.resultCountNM
-        let resultStatusCR : profilesData? = hostServerData.criminalRecord?.profiles
-        let resultStatusSO : profilesData? = hostServerData.sexOffenders?.profiles
+        let resultDMV      : String? = host_Data?.textMatchResult?.thirdPartyVerificationResultDescription
+        let resultCountPEP : String? = host_Data?.pepresult?.resultCountPEP
+        let resultCountWLS : String? = host_Data?.wlsresult?.resultCountWLS
+        let resultCountNM  : String? = host_Data?.nmresult?.resultCountNM
+        let resultStatusCR : CriminalProfileResult? = host_Data?.criminalRecord?.profiles
+        let resultStatusSO : ProfilesResult? = host_Data?.sexOffenders?.profiles
         
         var passStatus : Bool = false
         var reviewRequiredStatus : Bool = false
@@ -535,7 +533,7 @@ extension ResultScreenFor50{
 //MARK: - Helper Methods
 extension ResultScreenFor50{
 
-    private func getAddressFromResponse(response:CustomerEnrollResponse) -> String? {
+    private func getAddressFromResponse(response:CustomerEnrollResponseV3) -> String? {
         
         if let address = response.responseCustomerData?.extractedPersonalData?.address {
             return address

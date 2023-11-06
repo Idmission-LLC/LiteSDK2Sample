@@ -221,8 +221,8 @@ class ViewController: UIViewController {
         
         self.activityIndicator.startAnimating()
 
-        IDentitySDK.templateModelBaseURL = templateModelURL
-        IDentitySDK.apiBaseURL = baseAPIURLURL
+        IDentitySDK.initializeApiBaseUrl = templateModelURL
+        IDentitySDK.apiBaseUrl = baseAPIURLURL
         IDentitySDK.initializeSDK(loginId: theLoginID, password: thePassword, merchantId: theMerchantID) { error in
             self.activityIndicator.stopAnimating()
             if let error = error {
