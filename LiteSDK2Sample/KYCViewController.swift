@@ -110,11 +110,12 @@ extension KYCViewController : ResultScreenFor50Delegate {
         self.present(alert, animated: true)
     }
     
-    private func showCaptureBackPrompt(completion: @escaping BoolCompletion) {
+    private func showCaptureBackPrompt(completion: @escaping CaptureBackCompletion) {
         // first prompt the user to select if capturing a 2-sided ID
         let alert = UIAlertController(title: "Capture Back?", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "No", style: .default) { _ in completion(false) })
-        alert.addAction(UIAlertAction(title: "Yes", style: .default) { _ in completion(true) })
+        alert.addAction(UIAlertAction(title: "No", style: .default) { _ in completion(.no) })
+        alert.addAction(UIAlertAction(title: "Yes", style: .default) { _ in completion(.yes) })
+        alert.addAction(UIAlertAction(title: "Auto", style: .default) { _ in completion(.auto) })
         present(alert, animated: true)
     }
 
@@ -158,4 +159,5 @@ extension KYCViewController : ResultScreenFor50Delegate {
 
 enum CaptureType { case captureBack, idTypeCountryState }
 typealias CaptureTypeCompletion = (CaptureType) -> Void
+typealias CaptureBackCompletion = (CaptureBack) -> Void
 typealias IDTypeCountryStateCompletion = (_ idType: String, _ idCountry: String, _ idState: String?) -> Void

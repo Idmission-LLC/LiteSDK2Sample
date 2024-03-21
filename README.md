@@ -67,7 +67,6 @@ The IDmission IDentity SDK is a comprehensive toolkit that enables the use of an
 - [Document Capture](#9-additional-document-capture)
 - [Signature Capture](#10-signature-capture)
 - [FingerPrint Capture](#11-fingerprint-capture)
-- [Video Capture](#12-video-capture)
 - [Voice Capture](#13-voice-capture)
 
 
@@ -96,7 +95,6 @@ As per SDK flavour which you choose to integrate, add the following pod in your 
 pod 'IDentitySDK2.0'
 pod 'FingerPrintCapture' (Optional) : If developer required this feature they can use this framework.
 pod 'SignatureCapture' (Optional) : If developer required this feature they can use this framework.
-pod 'VideoCapture' (Optional) : If developer required this feature they can use this framework.
 pod 'VoiceCapture' (Optional) : If developer required this feature they can use this framework.
 ```
 
@@ -126,7 +124,6 @@ To add IDentitySDK2.0 manually, As per your requirement choose any SDK flavour &
     - `SelfieCapture_Swift.xcframework`
     - `SignatureCapture_Swift.xcframework` (Optional) : If developer required this feature they can use this framework.
     - `FingerPrintCapture_Swift.xcframework` (Optional) : If developer required this feature they can use this framework.
-    - `VideoCapture_Swift.xcframework` (Optional) : If developer required this feature they can use this framework.
     - `VoiceCapture_Swift.xcframework` (Optional) : If developer required this feature they can use this framework.
 
 - [Download IDentityMediumSDK2.0](https://drive.google.com/file/d/1iBY2AKyIWTsVLv2-Q1TaZ1LsjvTT0Wh5/view?usp=sharing) : Drag & drop following files in your project
@@ -211,9 +208,13 @@ end
 ### **Step 6:**  Install pod
 Run `pod install` to install above mentioned dependencies.  
 
-### **Step 7:** Add Camera Permission
-Add an [`NSCameraUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) key to the app's `Info.plist` to allow camera access.  
+### **Step 7:** Add Permissions
 
+- Add an [`NSCameraUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) key to the app's `Info.plist` to allow camera access.  
+- Add an [`NFCReaderUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nfcreaderusagedescription) key to the app's `Info.plist` to allow NFC reader access.
+- Add an [`NSMicrophoneUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nsmicrophoneusagedescription) key to the app's `Info.plist` to allow microphone access.
+- Add an [`NSSpeechRecognitionUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nsspeechrecognitionusagedescription) key to the app's `Info.plist` to allow speech recognition access.
+- Add an [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nfcreaderusagedescription) key to the app's `Info.plist` to allow GPS location access.
 
 <br />
 
@@ -233,7 +234,6 @@ import IDCapture_Swift
 import SelfieCapture_Swift
 import SignatureCapture_Swift (Its optional framework as per business requirement)
 import FingerPrintCapture_Swift (Its optional framework as per business requirement)
-import VideoCapture_Swift (Its optional framework as per business requirement)
 import VoiceCapture_Swift (Its optional framework as per business requirement)
 ```
     
@@ -333,7 +333,7 @@ For `ID Validation` you need to use below respective methods of SDK Flavours wit
 ```swift
 // For IDentitySDK : Start ID Validation with the default options, presenting it from view controller(self)
 
-let options =  AdditionalCustomerWFlagCommonDataV3()
+let options =  AdditionalCustomerWFlagCommonData()
 IDentitySDK.idValidation(from: self, options: options) { result in
     switch result {
         case .success(let validateIdResult):
@@ -361,9 +361,9 @@ IDentitySDK.idValidation(from: self, options: options) { result in
 -   <u>**IDentityMediumSDK  /  IDentityLiteSDK**</u> : For `IDentityMediumSDK  /  IDentityLiteSDK` flavours user can user either anyone below API call for `ID Validation`.  
 
 ```swift
-// For IDentityMediumSDK / IDentityLiteSDK :  Start ID Validation using captureBack(true/false) values with the default options, presenting it from view controller(self)
+// For IDentityMediumSDK / IDentityLiteSDK :  Start ID Validation using captureBack(true/false/auto) values with the default options, presenting it from view controller(self)
 
-let options = AdditionalCustomerWFlagCommonDataV3()
+let options = AdditionalCustomerWFlagCommonData()
 IDentitySDK.idValidation(from: self, options: options, captureBack: captureBack) { result in
     switch result {
         case .success(let validateIdResult):
@@ -393,7 +393,7 @@ OR
 ```swift
 // For IDentityMediumSDK / IDentityLiteSDK : Start ID Validation using idType, idCountry, idState with the default options, presenting it from view controller(self)
 
-let options = AdditionalCustomerWFlagCommonDataV3()
+let options = AdditionalCustomerWFlagCommonData()
 IDentitySDK.idValidation(from: self, options: options, idType: idType, idCountry: idCountry, idState: idState) { result in
     switch result {
         case .success(let validateIdResult):
@@ -418,7 +418,7 @@ IDentitySDK.idValidation(from: self, options: options, idType: idType, idCountry
 }
 ```
   
-The `AdditionalCustomerWFlagCommonDataV3` documentation contains information on the various capture options that can be set.  
+The `AdditionalCustomerWFlagCommonData` documentation contains information on the various capture options that can be set.  
 
 <br />
 
@@ -431,7 +431,7 @@ For `ID Validation and face match` you need to use below respective methods of S
 ```swift
 // For IDentitySDK : Start ID Validation and face match with the default options, presenting it from view controller(self)
 
-let options =  AdditionalCustomerWFlagCommonDataV3()
+let options =  AdditionalCustomerWFlagCommonData()
 IDentitySDK.idValidationAndMatchFace(from: self, options: options) { result in
     switch result {
         case .success(let validateIdMatchFaceResult):
@@ -457,9 +457,9 @@ IDentitySDK.idValidationAndMatchFace(from: self, options: options) { result in
 -   <u>**IDentityMediumSDK  /  IDentityLiteSDK**</u> : For `IDentityMediumSDK  /  IDentityLiteSDK` flavours user can user either anyone below API call `ID Validation and face match`.
 
 ```swift
-// For IDentityMediumSDK / IDentityLiteSDK : Start ID Validation and face match using captureBack(true/false) values with the default options, presenting it from view controller(self)
+// For IDentityMediumSDK / IDentityLiteSDK : Start ID Validation and face match using captureBack(true/false/auto) values with the default options, presenting it from view controller(self)
 
-let options = AdditionalCustomerWFlagCommonDataV3()
+let options = AdditionalCustomerWFlagCommonData()
 IDentitySDK.idValidationAndMatchFace(from: self, options: options, captureBack: captureBack) { result in
     switch result {
         case .success(let validateIdMatchFaceResult):
@@ -489,7 +489,7 @@ OR
 ```swift
 // For IDentityMediumSDK / IDentityLiteSDK : Start ID Validation and face match using idType, idCountry, idState with the default options, presenting it from view controller(self)
 
-let options = AdditionalCustomerWFlagCommonDataV3()
+let options = AdditionalCustomerWFlagCommonData()
 IDentitySDK.idValidationAndMatchFace(from: self, options: options, idType: idType, idCountry: idCountry, idState: idState) { result in
     switch result {
         case .success(let validateIdMatchFaceResult):
@@ -514,7 +514,7 @@ IDentitySDK.idValidationAndMatchFace(from: self, options: options, idType: idTyp
 }
 ```
 
-The `AdditionalCustomerWFlagCommonDataV3` documentation contains information on the various capture options that can be set.  
+The `AdditionalCustomerWFlagCommonData` documentation contains information on the various capture options that can be set.  
 
 <br />
 
@@ -527,8 +527,8 @@ For `Enroll Biometric` you need to use below method with personalData & & the de
 ```swift
 // Start customer enroll birometric with personalData & the default options, presenting it from view controller(self)
 
-let personalData = PersonalCustomerCommonRequestDataV3(uniqueNumber: uniqueNumber)
-let options = AdditionalCustomerEnrollBiometricRequestDataV3()
+let personalData = PersonalCustomerCommonRequestData(uniqueNumber: uniqueNumber)
+let options = AdditionalCustomerEnrollBiometricRequestData()
 IDentitySDK.customerEnrollBiometrics(from: self, personalData: personalData, options: options) { result in
     switch result {
         case .success(let customerEnrollBiometricsResult):
@@ -553,7 +553,7 @@ IDentitySDK.customerEnrollBiometrics(from: self, personalData: personalData, opt
 }
 ```
 
-The `AdditionalCustomerEnrollBiometricRequestDataV3` documentation contains information on the various capture options that can be set.  
+The `AdditionalCustomerEnrollBiometricRequestData` documentation contains information on the various capture options that can be set.  
 
 <br />
 
@@ -566,8 +566,8 @@ For `Enroll Customer with ID validation` you need to use below respective method
 ```swift
 // For IDentityMediumSDK / IDentityLiteSDK  : Start Enroll Customer with ID validation with personalData & the default options, presenting it from view controller(self)
 
-let personalData = PersonalCustomerCommonRequestDataV3(uniqueNumber: uniqueNumber)
-let options = AdditionalCustomerWFlagCommonDataV3()
+let personalData = PersonalCustomerCommonRequestData(uniqueNumber: uniqueNumber)
+let options = AdditionalCustomerWFlagCommonData()
 IDentitySDK.idValidationAndCustomerEnroll(from: self, personalData: personalData, options: options) { result in
     switch result {
         case .success(let customerEnrollResult):
@@ -596,10 +596,10 @@ IDentitySDK.idValidationAndCustomerEnroll(from: self, personalData: personalData
 -   <u>**IDentityMediumSDK  /  IDentityLiteSDK**</u> : For `IDentityMediumSDK  /  IDentityLiteSDK` flavours user can user either anyone below API call `Enroll Customer with ID validation`.
 
 ```swift
-// For IDentityMediumSDK / IDentityLiteSDK  : Start Enroll Customer with ID validation using captureBack(true/false) values with personalData & the default options, presenting it from view controller(self)
+// For IDentityMediumSDK / IDentityLiteSDK  : Start Enroll Customer with ID validation using captureBack(true/false/auto) values with personalData & the default options, presenting it from view controller(self)
 
-let personalData = PersonalCustomerCommonRequestDataV3(uniqueNumber: uniqueNumber)
-let options = AdditionalCustomerWFlagCommonDataV3()
+let personalData = PersonalCustomerCommonRequestData(uniqueNumber: uniqueNumber)
+let options = AdditionalCustomerWFlagCommonData()
 IDentitySDK.idValidationAndCustomerEnroll(from: self, personalData: personalData, options: options, captureBack: captureBack) { result in
     switch result {
         case .success(let customerEnrollResult):
@@ -629,8 +629,8 @@ OR
 ```swift
 // For IDentityMediumSDK / IDentityLiteSDK  : Start Enroll Customer with ID validation using idType, idCountry, idState with personalData & the default options, presenting it from view controller(self)
 
-let personalData = PersonalCustomerCommonRequestDataV3(uniqueNumber: uniqueNumber)
-let options = AdditionalCustomerWFlagCommonDataV3()
+let personalData = PersonalCustomerCommonRequestData(uniqueNumber: uniqueNumber)
+let options = AdditionalCustomerWFlagCommonData()
 IDentitySDK.idValidationAndCustomerEnroll(from: self, personalData: personalData, options: options, idType: idType, idCountry: idCountry, idState: idState) { result in
     switch result {
         case .success(let customerEnrollResult):
@@ -655,7 +655,7 @@ IDentitySDK.idValidationAndCustomerEnroll(from: self, personalData: personalData
 }
 ```
 
-The `AdditionalCustomerWFlagCommonDataV3` documentation contains information on the various capture options that can be set.  
+The `AdditionalCustomerWFlagCommonData` documentation contains information on the various capture options that can be set.  
 
 <br />
 
@@ -693,7 +693,7 @@ IDentitySDK.customerVerification(from: self, personalData: personalData) { resul
 }
 ```
 
-The `AdditionalCustomerWFlagCommonDataV3` documentation contains information on the various capture options that can be set.  
+The `AdditionalCustomerWFlagCommonData` documentation contains information on the various capture options that can be set.  
 
 <br />
 
@@ -836,37 +836,7 @@ IDentitySDK.fingerPrintCapture(from: self) { fingerPrintResult in
 
 <br />
 
-### 12) Video Capture.  
-
-For `Video Capture` you first need to successfully complete the `ID Validation` flow from item <b>2)</b> above before passing the `front` and `back` `DetectedData` items from the `ValidateIdResult` to the below method presented from a `UIViewController`.
-
-  -   <u>**IDentitySDK**</u> : For `IDentitySDK` flavour user needs to use below API call method for `Video Capture`. 
-  
-```swift
-// Text for the user to read aloud during video recording.
-let text = "..."
-
-// Start Video Capture, presenting it from view controller(self)
-
-IDentitySDK.videoIDCapture(from: self, front: lastValidateIdResult.front, back: lastValidateIdResult.back, text: text) { result in
-    switch result {
-    case .success(let videoIdResult):
-        // Copy or move the video from its temporary location to the documents folder.
-        // (The temporary video will be removed once this method returns.)
-        let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let url = documentDirectory.appendingPathComponent("video.mp4")
-        try? FileManager.default.moveItem(at: videoIdResult.videoURL, to: url)
-
-        // Review successful video ID result.
-        print(videoIdResult)
-    case .failure(let error):
-        // Handle error.
-        print(error.localizedDescription)
-    }
-}
-```
-
-### 13) Voice Capture.  
+### 12) Voice Capture.  
 
 For `Voice Capture` you need to use below method from a `UIViewController`. If successful, call `submit` to send the result to the server.  
 
@@ -908,6 +878,7 @@ IDCapture.options.uploadIdData = true
 IDCapture.options.capture4K = true
 IDCapture.options.focusThreshold = 0.3
 IDCapture.options.enablePassportNFC = false
+IDCapture.options.passportNFCPhotoMatchThreshold = 0.97
 
 //IDCapture Camera Screen UI Customization
 IDCapture.strings.closeButtonText = "Cancel"
@@ -1207,33 +1178,6 @@ FingerPrintCapture.strings.fingerTooFar = "Too Far"
 
 ```
 
--   Before starting either Capture flow, optionally adjust the following <a href="./Classes/VideoCapture.html">VideoCapture</a> static properties:
-
-```swift
-//VideoCapture Customization
-VideoCapture.options.idToSelfieMatchThreshold = 0.9
-VideoCapture.options.idToIdPhotoMatchThreshold = 0.9
-VideoCapture.options.frontLevenshteinThreshold = 0.25
-VideoCapture.options.backLevenshteinThreshold = 0.45
-VideoCapture.options.readTextCountdownSeconds = 10
-VideoCapture.options.readTextWordMatchThreshold = 0.5
-VideoCapture.options.isDebugMode = false
-VideoCapture.options.frontRealnessThreshold = 0.5
-VideoCapture.options.backRealnessThreshold = 0.3
-VideoCapture.options.enableRealId = false
-
-//VideoCapture Screen UI Customization
-VideoCapture.strings.faceDoesNotMatch = "Face does not match"
-VideoCapture.strings.idDoesNotMatch = "ID does not match"
-VideoCapture.strings.doneButton = "Done"
-VideoCapture.strings.liveFaceLost = @"Live face lost, Please try again."
-VideoCapture.strings.voiceDoesNotMatch = @"Voice does not match, Please try again."
-VideoCapture.colors.readingTextColor = .black
-VideoCapture.colors.readingTextSpokenWordColor = .blue 
-VideoCapture.colors.readingTextBackgroundColor = .clear
-
-```
-
 -   Before starting either Capture flow, optionally adjust the following <a href="./Classes/VoiceCapture.html">VoiceCapture</a> static properties:
 
 ```swift
@@ -1279,31 +1223,41 @@ VoiceCapture.fonts.buttonLabelFont = UIFont.systemFont(ofSize: 12)
 
 ## SDK Version History
 
-### **v 9.5.15.2.5**
+### **v 9.6.4.2.1 (26 February 2024)**
+- Added Apple Privacy Policy - Spring 2024 Mandate
+- Updated Doc-Detect model to determine if ID or Passport capture
+- Updated all default AI models to the latest versions.
+
+### **v 9.6.3.2.2 (29 January 2024)**
+- Updated SDK support for additional flags (sendProcessedImagesInResponse and sendInputImagesInResponse)
+- Added ID extracted profession and profession non English data in response
+- Updated all default AI models to the latest versions.
+
+### **v 9.5.15.2.5 (06 November 2023)**
 - Added face Focus Model
 - Updated Embedded model with Production tags models
 - Improved Fingerprint Capture feature for triple camera
 - Added Voice Capture feature 
 
-### **v 9.5.9.2.4**
+### **v 9.5.9.2.4 (08 August 2023)**
 - Bug Fixes for Passport NFC detection
 - Bug fixes and performance improvements.
 
-### **v 9.5.7.2.5**
+### **v 9.5.7.2.5(07 July 2023)**
 - Added Passport NFC feature
 - Minor bug fixes
 
-### **v 9.5.3.2.3**
+### **v 9.5.3.2.3 (15 May 2023)**
 - Enhanced capture of passports.
 - Improved Video ID processing procedures
 - Reduced default selfie silhouette size during liveness detection
 
-### **v 9.5.2.2.3**
+### **v 9.5.2.2.3 (25 April 2023)**
 - Downloading all models from server
 - Updated focus model to be downloaded from server and updated default focus threshold.
 - Enhancements added to improve handling of Video ID
 
-### **v 9.4.8.2.1**
+### **v 9.4.8.2.1 (10 March 2023)**
 - Added VideoIDCapture support
 - Added SignatureCapture support
 - Added FingerPrintCapture support
