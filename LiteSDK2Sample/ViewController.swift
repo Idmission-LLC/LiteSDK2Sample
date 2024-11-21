@@ -88,8 +88,8 @@ extension ViewController {
         IDCapture.options.backRealnessThreshold = 0.3
         IDCapture.options.frontDocumentConfidence = 0.7
         IDCapture.options.backDocumentConfidence = 0.7
-        IDCapture.options.lowerWidthThresholdTolerance = 0.4
-        IDCapture.options.upperWidthThresholdTolerance = 0.1
+        IDCapture.options.lowerWidthThresholdTolerance = 0.2
+        IDCapture.options.upperWidthThresholdTolerance = 0.05
         IDCapture.options.isDebugMode = false
         IDCapture.options.enableInstructionScreen = true
         IDCapture.options.enableRealId = false
