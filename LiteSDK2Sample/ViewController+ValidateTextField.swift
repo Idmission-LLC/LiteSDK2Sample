@@ -7,6 +7,20 @@
 
 import UIKit
 
+//MARK: - UITextfield Delegate Method
+extension ViewController {
+    
+    override func resignFirstResponder() -> Bool {
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+}
+
 //MARK: - Validate TextField
 extension ViewController {
     
