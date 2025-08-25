@@ -141,8 +141,10 @@ class ResultScreenFor50: UIView {
         processedResultContainerView.layer.shadowOffset = .zero
         processedResultContainerView.layer.shadowRadius = 1
         
-        isHideTopView(ishide: false)
-        
+        capturedResultContainerView_HeightConstraint.constant = 662
+        capturedResultIdFrontImage.isHidden = true
+        capturedResultIdBackImage.isHidden = true
+
         processedResultContainerView_HeightConstraint.constant = 0
         processedResultIdFrontImageView.isHidden = true
         processedResultIdBackImageView.isHidden = true
@@ -150,14 +152,6 @@ class ResultScreenFor50: UIView {
         processingTimerLabel.isHidden = true
     }
     
-    func isHideTopView(ishide:Bool) {
-        
-        capturedResultContainerView_HeightConstraint.constant = 662
-        capturedResultIdFrontImage.isHidden = true
-        capturedResultIdBackImage.isHidden = true
-
-    }
-
     @IBAction func doneButtonPressed(_ sender: UIButton) {
         self.delegate?.doneButtonPressed()
     }
@@ -168,6 +162,7 @@ class ResultScreenFor50: UIView {
 extension ResultScreenFor50 {
     
     private func populateThisXibWithData(customerEnrollResult: CustomerEnrollResult?){
+        
         //1. Show Selfie Image
         self.capturedResultSelfieImageView.image = customerEnrollResult?.selfie.image
         
@@ -228,13 +223,14 @@ extension ResultScreenFor50 {
         
 }
 
-// MARK: -  Load XIB From Server Extracted Data
+//MARK: - Step-4: SDK Final Submit
+//MARK: - Load XIB From Server Extracted Data
 extension ResultScreenFor50{
     
     func submitAPI(customerEnroll_Result : CustomerEnrollResult?) {
         
         //Populate the Processed Result Data
-        customerEnroll_Result?.submit { result in
+        customerEnroll_Result?.finalSubmit { result in
             self.processedResultHeadingLabel.isHidden = false
             self.processedResultActivityIndicator.stopAnimating()
             self.processedResultActivityIndicator.isHidden = true
@@ -349,7 +345,7 @@ extension ResultScreenFor50{
         
     }
     
-    private func show_DMV_AMKKYC_CriRecSexOff_Result(host_Data:HostdataResponseV3?) {
+    private func show_DMV_AMKKYC_CriRecSexOff_Result(host_Data:HostdataResponse?) {
         
         let resultDMV      : String? = host_Data?.textMatchResult?.thirdPartyVerificationResultDescription
         let resultCountPEP : String? = host_Data?.pepresult?.resultCountPEP
@@ -533,7 +529,7 @@ extension ResultScreenFor50{
 //MARK: - Helper Methods
 extension ResultScreenFor50{
 
-    private func getAddressFromResponse(response:CustomerEnrollResponseV3) -> String? {
+    private func getAddressFromResponse(response:CustomerEnrollResponse) -> String? {
         
         if let address = response.responseCustomerData?.extractedPersonalData?.address {
             return address

@@ -36,16 +36,18 @@ class KYCViewController: UIViewController {
         present(alert, animated: true)
     }
     
+    //MARK: - Step-3: SDK Core Functions
     // Service Code 50 - ID Validation And Customer Enroll
     private func startIDValidationAndCustomerEnroll(uniqueNumber: String) {
         
-        let personalData = PersonalCustomerCommonRequestEnrollDataV3(uniqueNumber: uniqueNumber)
-        let options = AdditionalCustomerWFlagCommonDataV3()
-        
+        let commonCustomerData = CommonCustomerDataRequest()
+        let personalData = PersonalCustomerCommonRequestEnrollData(uniqueNumber: uniqueNumber)
+        let options = AdditionalCustomerWFlagCommonData()
+
         showCaptureTypePrompt { type in
             if type == .captureBack {
                 self.showCaptureBackPrompt { captureBack in
-                    IDentitySDK.idValidationAndCustomerEnroll(from: self, personalData: personalData, options: options, captureBack: captureBack) { result in
+                    IDentitySDK.idValidationAndCustomerEnroll(from: self, customerDataOptions: commonCustomerData, personalData: personalData, options: options, captureBack: captureBack) { result in
                         switch result {
                         case .success(let customerEnrollResult):
                             
@@ -65,7 +67,7 @@ class KYCViewController: UIViewController {
             } else {
                 self.showIDTypeCountryStatePrompt { idType, idCountry, idState in
                     // start ID capture, presenting it from this view controller
-                    IDentitySDK.idValidationAndCustomerEnroll(from: self, personalData: personalData, options: options, idType: idType, idCountry: idCountry, idState: idState) { result in
+                    IDentitySDK.idValidationAndCustomerEnroll(from: self, customerDataOptions: commonCustomerData, personalData: personalData, options: options, idType: idType, idCountry: idCountry, idState: idState) { result in
                         switch result {
                         case .success(let customerEnrollResult):
                             

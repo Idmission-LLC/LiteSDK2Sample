@@ -37,12 +37,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         token_Textfield.text = ""
     }
     
-    //Initialize SDK
+    //MARK: - Step-1: Generate AccessToken
     @IBAction func generateAccessTokenTapped(_ sender:Any) {
         generateAccessToken()
     }
 
-    //Initialize SDK
+    //MARK: - Step-2: SDK Initialization
     @IBAction func initializeSDKTapped(_ sender:Any) {
         SDKInitializationAPICall()
     }

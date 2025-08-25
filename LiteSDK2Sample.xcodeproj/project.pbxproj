@@ -22,7 +22,7 @@
 		0CA76AF4281C6A6A00B23630 /* HostDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA76AF2281C6A6A00B23630 /* HostDataModel.swift */; };
 		0CA76AF5281C6A6A00B23630 /* ModelForResultScreenServiceId20.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA76AF3281C6A6A00B23630 /* ModelForResultScreenServiceId20.swift */; };
 		0CD72DC12D6DFEFF00787056 /* ViewController+SDKInitialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD72DC02D6DFEFD00787056 /* ViewController+SDKInitialization.swift */; };
-		607B463EE6D9348ED287A6D3 /* Pods_LiteSDK2Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C58AE32985B67364A33AD2C3 /* Pods_LiteSDK2Sample.framework */; };
+		76C0411738F231A549AD86DD /* Pods_LiteSDK2Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541BC87AAFFEA755DDEA90F1 /* Pods_LiteSDK2Sample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,9 +56,9 @@
 		0CA76AF2281C6A6A00B23630 /* HostDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostDataModel.swift; sourceTree = "<group>"; };
 		0CA76AF3281C6A6A00B23630 /* ModelForResultScreenServiceId20.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelForResultScreenServiceId20.swift; sourceTree = "<group>"; };
 		0CD72DC02D6DFEFD00787056 /* ViewController+SDKInitialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+SDKInitialization.swift"; sourceTree = "<group>"; };
-		199F8BE2A5F14C6D35757B6E /* Pods-LiteSDK2Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiteSDK2Sample.debug.xcconfig"; path = "Target Support Files/Pods-LiteSDK2Sample/Pods-LiteSDK2Sample.debug.xcconfig"; sourceTree = "<group>"; };
-		C58AE32985B67364A33AD2C3 /* Pods_LiteSDK2Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiteSDK2Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D67C3DC987B7087D6FCEF023 /* Pods-LiteSDK2Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiteSDK2Sample.release.xcconfig"; path = "Target Support Files/Pods-LiteSDK2Sample/Pods-LiteSDK2Sample.release.xcconfig"; sourceTree = "<group>"; };
+		1E1E59E269417610240BBA90 /* Pods-LiteSDK2Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiteSDK2Sample.release.xcconfig"; path = "Target Support Files/Pods-LiteSDK2Sample/Pods-LiteSDK2Sample.release.xcconfig"; sourceTree = "<group>"; };
+		36ACA4F53129BF1F7F4D5C90 /* Pods-LiteSDK2Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiteSDK2Sample.debug.xcconfig"; path = "Target Support Files/Pods-LiteSDK2Sample/Pods-LiteSDK2Sample.debug.xcconfig"; sourceTree = "<group>"; };
+		541BC87AAFFEA755DDEA90F1 /* Pods_LiteSDK2Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiteSDK2Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607B463EE6D9348ED287A6D3 /* Pods_LiteSDK2Sample.framework in Frameworks */,
+				76C0411738F231A549AD86DD /* Pods_LiteSDK2Sample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,8 +76,8 @@
 		0A890F12755109B44274B3CF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				199F8BE2A5F14C6D35757B6E /* Pods-LiteSDK2Sample.debug.xcconfig */,
-				D67C3DC987B7087D6FCEF023 /* Pods-LiteSDK2Sample.release.xcconfig */,
+				36ACA4F53129BF1F7F4D5C90 /* Pods-LiteSDK2Sample.debug.xcconfig */,
+				1E1E59E269417610240BBA90 /* Pods-LiteSDK2Sample.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -88,7 +88,7 @@
 				0CA76AC1281C236800B23630 /* LiteSDK2Sample */,
 				0CA76AC0281C236800B23630 /* Products */,
 				0A890F12755109B44274B3CF /* Pods */,
-				A0287287CC5BBADB2D9873DC /* Frameworks */,
+				DB067AEEC8A01DA4B9C21B0A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,10 +131,10 @@
 			path = "Helper Files";
 			sourceTree = "<group>";
 		};
-		A0287287CC5BBADB2D9873DC /* Frameworks */ = {
+		DB067AEEC8A01DA4B9C21B0A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C58AE32985B67364A33AD2C3 /* Pods_LiteSDK2Sample.framework */,
+				541BC87AAFFEA755DDEA90F1 /* Pods_LiteSDK2Sample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,13 +146,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CA76AD3281C236B00B23630 /* Build configuration list for PBXNativeTarget "LiteSDK2Sample" */;
 			buildPhases = (
-				2D5FE4747791A10672ACE050 /* [CP] Check Pods Manifest.lock */,
+				061B1C20352189080391D43E /* [CP] Check Pods Manifest.lock */,
 				0CA76ABB281C236800B23630 /* Sources */,
 				0CA76ABC281C236800B23630 /* Frameworks */,
 				0CA76ABD281C236800B23630 /* Resources */,
 				0CA76ADE281C2A0E00B23630 /* Embed Frameworks */,
-				F2DE3E59BD1BD611B0A4517A /* [CP] Embed Pods Frameworks */,
-				46B0C192F229028514B46578 /* [CP] Copy Pods Resources */,
+				9C6735FDA676DDC896BA7CB2 /* [CP] Embed Pods Frameworks */,
+				B303D178EF6611C6BD609D97 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -211,7 +211,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2D5FE4747791A10672ACE050 /* [CP] Check Pods Manifest.lock */ = {
+		061B1C20352189080391D43E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -233,24 +233,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		46B0C192F229028514B46578 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LiteSDK2Sample/Pods-LiteSDK2Sample-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LiteSDK2Sample/Pods-LiteSDK2Sample-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LiteSDK2Sample/Pods-LiteSDK2Sample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F2DE3E59BD1BD611B0A4517A /* [CP] Embed Pods Frameworks */ = {
+		9C6735FDA676DDC896BA7CB2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -265,6 +248,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LiteSDK2Sample/Pods-LiteSDK2Sample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B303D178EF6611C6BD609D97 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LiteSDK2Sample/Pods-LiteSDK2Sample-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LiteSDK2Sample/Pods-LiteSDK2Sample-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LiteSDK2Sample/Pods-LiteSDK2Sample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -426,12 +426,12 @@
 		};
 		0CA76AD4281C236B00B23630 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 199F8BE2A5F14C6D35757B6E /* Pods-LiteSDK2Sample.debug.xcconfig */;
+			baseConfigurationReference = 36ACA4F53129BF1F7F4D5C90 /* Pods-LiteSDK2Sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = SXB7K82DRL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -447,11 +447,12 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 10.1.4;
+				MARKETING_VERSION = 10.1.16;
 				PRODUCT_BUNDLE_IDENTIFIER = com.idmission.idms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -462,12 +463,12 @@
 		};
 		0CA76AD5281C236B00B23630 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D67C3DC987B7087D6FCEF023 /* Pods-LiteSDK2Sample.release.xcconfig */;
+			baseConfigurationReference = 1E1E59E269417610240BBA90 /* Pods-LiteSDK2Sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = SXB7K82DRL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -483,11 +484,12 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 10.1.4;
+				MARKETING_VERSION = 10.1.16;
 				PRODUCT_BUNDLE_IDENTIFIER = com.idmission.idms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

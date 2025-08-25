@@ -38,7 +38,7 @@ extension ViewController {
                 self.displayAlert(title: "Error", Message: "SDK initialization credentials are not correct")
             } else {
                 print("!!! initialize SDK SUCCESS")
-                self.performSegue(withIdentifier: "CompleteKYC_SegueID", sender: nil)
+//                self.performSegue(withIdentifier: "CompleteKYC_SegueID", sender: nil)
             }
         }
         
@@ -63,13 +63,10 @@ extension ViewController: InitializationDelegate {
         case .getXsltData: print("XSLT Download Status :", stage_state_Value)
         case .searchCompanyTemplateDetails: print("Template Download Status :", stage_state_Value)
         case .passiveFaceTrainingModelLabel: print("FaceModel Download Status :", stage_state_Value)
-        case .idCaptureTrainingModelLabel: print("IDCaptureModel Download Status :", stage_state_Value)
-        case .classifierTrainingModelLabel: print("ClassificationModel Download Status :", stage_state_Value)
-        case .faceMaskTrainingModelLabel: print("FaceMaskModel Download Status :", stage_state_Value)
+        case .focusFaceTrainingModelLabel: print("FaceFocusModel Download Status :", stage_state_Value)
         case .docDetectionTrainingModelLabel: print("DocDetectModel Download Status :", stage_state_Value)
         case .fingerprintDetectionTrainingModelLabel: print("FingerPrintModel Download Status :", stage_state_Value)
         case .focusTrainingModelLabel: print("IDFocusModel Download Status :", stage_state_Value)
-        case .focusFaceTrainingModelLabel: print("FaceFocusModel Download Status :", stage_state_Value)
         @unknown default: print("Unknown Status :", stage_state_Value)
         }
         
@@ -79,9 +76,7 @@ extension ViewController: InitializationDelegate {
             ([.ok, .downloaded].contains(states[.getXsltData])) &&
             ([.ok, .downloaded].contains(states[.searchCompanyTemplateDetails])) &&
             ([.ok, .downloadedFromS3].contains(states[.passiveFaceTrainingModelLabel])) &&
-            ([.ok, .downloadedFromS3].contains(states[.faceMaskTrainingModelLabel])) &&
             ([.ok, .downloadedFromS3].contains(states[.focusFaceTrainingModelLabel])) &&
-            ([.ok, .downloadedFromS3].contains(states[.idCaptureTrainingModelLabel])) &&
             ([.ok, .downloadedFromS3].contains(states[.docDetectionTrainingModelLabel])) &&
             ([.ok, .downloadedFromS3].contains(states[.fingerprintDetectionTrainingModelLabel])) &&
             ([.ok, .downloadedFromS3].contains(states[.focusTrainingModelLabel])) {
